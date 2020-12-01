@@ -10,6 +10,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 /* Yeseva One */
 @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+$white: #ffffffff;
+$black: #000000ff;
+$red: #ff0000ff;
+$green: #00ff00ff;
+$blue: #0000ffff;
+
+$yellow: #ffff00ff;
+$pink: #ff00ffff;
+$cyan: #00ffffff;
+
+$pinkish: #f28482ff;
+$orangePinkish: #ed6a5aff;
+$lightYellow: #f6bd60ff;
+$lightBlue: #98c1d9ff;
+$dazzledBlue: #3d5a80ff;
+$darkBlue: #2b2d42ff;
+
+$primaryColor: #2b2d42ff;
+$secondaryColor: #3d5a80ff;
+
 * {
 	padding: 0;
 	margin: 0;
@@ -19,6 +46,9 @@
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 	outline: 0;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
 }
 
 *::-moz-selection {
@@ -28,7 +58,7 @@
 }
 
 *::selection {
-	background-color: lightblue;
+	background-color: $lightBlue;
 	color: black;
 	outline: 0;
 }
@@ -55,3 +85,11 @@ body {
 	font-size: 16px;
 	font-family: "Karla", sans-serif;
 }
+
+//
+// MAIN APPLICATION CSS PART STARTS HERE...
+//
+
+//
+// HEADER COMPOENENT..
+//
