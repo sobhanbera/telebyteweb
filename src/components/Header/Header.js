@@ -65,10 +65,7 @@ const Header = (props) => {
 					</ul>
 				</nav>
 				<div className={styles.headerProfile}>
-					<img
-						src='https://avatars2.githubusercontent.com/u/50291544?s=400&u=080c8ba0eed666fbccd2ca058c2533ae87463ca6&v=4'
-						alt='tavatar'
-					/>
+					<img src='' alt='tavatar' />
 				</div>
 			</div>
 			<div
