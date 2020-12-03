@@ -256,7 +256,7 @@ body {
   z-index: -1;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .mainHeader .header {
     width: 80%;
     margin: 0 auto;

@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-
 import { Route, Switch } from "react-router-dom";
-
-import Auxiliary from "../hoc/Auxiliary";
-import ChildErrorBoundary from "../components/ErrorBoundary/ChildErrorBoundary";
+// import Auxiliary from "../hoc/Auxiliary";
+// import ChildErrorBoundary from "../components/ErrorBoundary/ChildErrorBoundary";
 import Header from "../components/Header/Header";
 import Loader from "../components/loader/Loader";
 import Auth from "../components/auth/Authentication";
@@ -15,7 +13,7 @@ class MainApp extends Component {
 		super();
 		this.state = {
 			lightTheme: true,
-			showLoader: false,
+			showLoader: true,
 			isLoggedIn: false,
 			user: "",
 		};
@@ -55,31 +53,24 @@ class MainApp extends Component {
 		const currTheme = this.state.lightTheme ? "light" : "dark";
 
 		return (
-			<ChildErrorBoundary>
-				<Auxiliary>
-					<div
-						className={`${currTheme} main-app-start_sbHcTtWwfDOt`}
-						onLoad={this.disableLoader}
-					>
-						<Header theme={currTheme} profileImg={""} />
+			<div
+				onLoad={this.disableLoader}
+				className={`${currTheme} main-app-start_sbHcTtWwfDOt`}>
+				<Header theme={currTheme} profileImg={""} />
 
-						{this.state.isLoggedIn ? (
-							<Switch>
-								<Route path="*" component={""} />
-								<Route exact path="/" component={""} />
-								<Route exact path="/dashboard" component={""} />
-							</Switch>
-						) : (
-							<Auth reloadFuntion={this.reloadFuntion} />
-						)}
+				<Switch>
+					<Route path='*' component={""} />
+					<Route exact path='/' component={""} />
+					<Route exact path='/dashboard' component={""} />
+				</Switch>
 
-						<Footer />
+				<Auth reloadFuntion={this.reloadFuntion} />
 
-						{/* EXTRAS */}
-						{this.state.showLoader ? <Loader /> : null}
-					</div>
-				</Auxiliary>
-			</ChildErrorBoundary>
+				<Footer />
+
+				{/* EXTRAS */}
+				{this.state.showLoader ? <Loader /> : null}
+			</div>
 		);
 	}
 }
