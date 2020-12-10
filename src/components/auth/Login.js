@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from "../../hoc/Css";
-import firebase from "../../firebase/Firebase";
+import styles from "../elements/styles/style";
+import firebase from "../../container/Firebase";
 
 const Login = (props) => {
 	const emailValidator = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -8,80 +8,62 @@ const Login = (props) => {
 	const [email, setEmail] = useState("");
 	const [password, setPass] = useState("");
 
-	const loginUser = () => {
-		if (email === "") {
-			alert("Email is required. Please Provide All Fields.");
-			return;
-		} else if (password === "") {
-			alert("Password is required. Please Provide All Fields.");
-			return;
-		}
+	const loginUser = (formState) => {
+		formState.preventDefault();
+		props.sL();
 
 		if (!email.match(emailValidator)) {
-			alert("Please enter a valid email address.");
-			return;
+			alert("please enter a valid email address.");
 		}
 
 		firebase
-			.firestore()
-			.collection("Users")
-			.where("email", "==", email)
-			.then((response) => {
-				if (!response.empty) {
-					//login user since credentials founded successfully...
-					firebase
-						.auth()
-						.signInWithEmailAndPassword(email, password)
-						.then((response) => {
-							//HERE WE GOT THE RESPONSE
-							props.reloadFunction();
-						})
-						.catch((err) => {
-							if (err.code === "auth/wrong-password") {
-								alert(
-									"Wrong Password! Please enter the correct password."
-								);
-							}
-						});
+			.auth()
+			.signInWithEmailAndPassword(email, password)
+			.then((res) => {
+				// console.log(res);
+				// console.log("user logged in succesfully");
+				props.dL();
+			})
+			.catch((err) => {
+				props.dL();
+				if (err.code.includes("auth/wrong-password")) {
+					alert("Incorrect Password");
 				} else {
 					alert(
-						"User not found in the database. Please create account or try again"
+						"some error occurred while creating your account please try again, or contact the developer so this could be fixed"
 					);
 				}
 			});
 	};
 
 	return (
-		<form className={styles.loginForm} onSubmit={loginUser}>
+		<form
+			className={styles.LoginForm}
+			onSubmit={(formState) => loginUser(formState)}
+		>
 			<input
-				id="loginemail"
-				className={styles.authInput}
-				type="email"
-				name="email"
-				placeholder="Email"
-				value={email}
 				autoComplete="on"
-				onChange={(event) => {
-					setEmail(event.target.value);
-				}}
+				placeholder="Email"
+				id="regemail"
+				type="email"
+				value={email}
+				className={styles.AuthInput}
+				onChange={(e) => setEmail(e.target.value)}
 			/>
 			<input
-				id="loginpass"
-				className={styles.authInput}
-				name="pass"
-				type="password"
-				placeholder="Password"
-				value={password}
 				autoComplete="on"
-				onChange={(event) => {
-					setPass(event.target.value);
-				}}
+				placeholder="Password"
+				id="regpassword"
+				type="password"
+				value={password}
+				className={styles.AuthInput}
+				onChange={(e) => setPass(e.target.value)}
 			/>
 			<div className={styles.loginRightSection}>
 				<span className={styles.forgotPassText}>
 					Forgot Password! Reset?
 				</span>
-				<button id="submit" className={styles.submitButton}>
+				<button id="submit" className={styles.SubmitButton}>
 					Login
 				</button>
 			</div>
