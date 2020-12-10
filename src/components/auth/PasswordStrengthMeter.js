@@ -1,61 +1,47 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import zxcvbn from "zxcvbn";
-import styles from "../../hoc/Css";
+import styles from "../elements/styles/style";
 
 function PasswordStrengthMeter(props) {
 	const { password } = props;
-	const testedResult = zxcvbn(password);
-	const [scoreLable, setScoreLable] = useState("");
-
-	const createPasswordLabel = () => {
-		switch (testedResult.score) {
-			case 0:
-				setScoreLable("");
-				break;
-			case 1:
-				setScoreLable("Weak");
-				break;
-			case 2:
-				setScoreLable("Fair");
-				break;
-			case 3:
-				setScoreLable("Good");
-				break;
-			case 4:
-				setScoreLable("Strong");
-				break;
-			default:
-				setScoreLable("Weak");
-		}
-	};
-
-	useEffect(() => {
-		createPasswordLabel();
-	}, [password]);
+	const passScore = zxcvbn(password).score;
 
 	return (
 		<div className={styles.passwordStrengthMeter}>
 			<div className={styles.passwordStrengthMeterProgress}>
 				<div
 					className={`${
-						scoreLable === "Weak"
+						passScore === 1
 							? styles.weakPass
-							: scoreLable === "Fair"
+							: passScore === 2
 							? styles.fairPass
-							: scoreLable === "Good"
+							: passScore === 3
 							? styles.goodPass
-							: scoreLable === "Strong"
+							: passScore > 3
 							? styles.strongPass
 							: null
-					} ${styles.passStrength}`}
-					value={testedResult.score}
+					} ${styles.passStrength} ${
+						passScore > 3 && props.extraClass
+							? styles.completePass
+							: ""
+					}`}
+					value={passScore}
 					min="0"
 					max="4"
 				></div>
 			</div>
 
 			<label className={styles.passwordStrengthMeterLabel}>
-				Password Strength: {scoreLable}
+				Password Strength:{" "}
+				{passScore <= 1
+					? "weak"
+					: passScore === 2
+					? "fair"
+					: passScore === 3
+					? "good"
+					: passScore > 3
+					? "strong"
+					: null}
 			</label>
 		</div>
 	);
