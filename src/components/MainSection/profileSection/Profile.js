@@ -76,7 +76,7 @@ const EducationSection = (props) => {
 					);
 				})
 			) : (
-				<span>Education not provided by user</span>
+				<span>Education not provided by {props.username ? props.username : "user"}</span>
 			)}
 		</div>
 	);
@@ -191,6 +191,7 @@ const Profile = (props) => {
 		twitter = social.twitter;
 	}
 
+
 	const colorIsLight = (color) => {
 		let r, g, b, hsp;
 		if (color.match(/^rgb/)) {
@@ -293,7 +294,7 @@ const Profile = (props) => {
 						<p>
 							{about
 								? about
-								: `about section is not provided by ${username}`}
+								: `about section is not provided by ${username || "user"}`}
 						</p>
 					</div>
 
@@ -307,7 +308,7 @@ const Profile = (props) => {
 						<div className={styles.ProfileCardLeftHRLine}></div>
 					</div>
 
-					<EducationSection educationList={education} />
+					<EducationSection educationList={education} username={username} />
 				</div>
 			</div>
 		</div>
