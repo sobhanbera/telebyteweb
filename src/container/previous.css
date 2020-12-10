@@ -1,0 +1,1026 @@
+/* Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Karla */
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+/* Yeseva One */
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+/* Inter */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  outline: 0;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+*::-moz-selection {
+  outline: 0;
+  color: #000000;
+  background: #dfdfdf;
+}
+
+*::selection {
+  outline: 0;
+  color: #000000;
+  background: #dfdfdf;
+}
+
+ul,
+ol,
+li {
+  list-style-type: none;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  /* i know this is default value of font-size just for remebering purpose */
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.loaderWrapper {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  transition: all 3s;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(200, 200, 200, 0.01);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-transition: all 3s;
+  -moz-transition: all 3s;
+  -ms-transition: all 3s;
+  -o-transition: all 3s;
+}
+
+.loaderWrapper .mainLoader {
+  width: 100px;
+  height: 100px;
+  margin: 100px auto;
+  background-color: #272c32;
+  border-radius: 100%;
+  animation: sk-scaleout 1s infinite ease-in-out;
+  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+  }
+}
+
+.mainHeader {
+  width: 100%;
+  height: 55px;
+  background-color: #272c32;
+}
+
+.mainHeader .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1000px;
+  height: 100%;
+  z-index: 33;
+  margin: 0 auto;
+}
+
+.mainHeader .header .headerMenu {
+  display: none;
+}
+
+.mainHeader .header .headerMenu svg {
+  width: 35px;
+  fill: white;
+  cursor: pointer;
+}
+
+.mainHeader .header .headerLogo {
+  height: 65%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.mainHeader .header .headerLogo a {
+  height: 100%;
+  text-decoration: none;
+}
+
+.mainHeader .header .headerLogo a svg {
+  height: 100%;
+}
+
+.mainHeader .header .headerNav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  list-style-type: none;
+}
+
+.mainHeader .header .headerNav ul li {
+  border-radius: 5px;
+  color: #ffffffff;
+  margin: 0 10px;
+  padding: 5px 10px;
+  list-style: none;
+  list-style-type: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.mainHeader .header .headerNav ul li a {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+.mainHeader .header .headerNav ul li .customHeaderAnchor {
+  display: none;
+}
+
+.mainHeader .header .headerNav ul li:hover {
+  background-color: #2e3339;
+}
+
+.mainHeader .header .headerNav ul li:hover a {
+  color: #cfcfcf;
+}
+
+.mainHeader .header .headerNav ul li:active {
+  background-color: #2b3036;
+}
+
+.mainHeader .header .headerNav ul li:active a {
+  color: #afafaf;
+}
+
+.mainHeader .header .headerProfile img {
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid white;
+  max-height: 35px;
+  max-width: 35px;
+  height: 35px;
+  width: auto;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.mainHeader .headerNavSecond {
+  display: none;
+  opacity: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1100px) {
+  .mainHeader .header {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .mainHeader .header {
+    width: 95%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .mainHeader .header .headerMenu {
+    display: inline;
+  }
+  .mainHeader .header .headerMenu svg {
+    padding: 5px;
+  }
+  .mainHeader .header .headerLogo a svg {
+    height: 85%;
+  }
+  .mainHeader .header .headerNav {
+    display: none;
+  }
+  .mainHeader .headerNavSecond {
+    transition: all 0.5s;
+    transform: translateX(-100);
+    position: relative;
+    display: inline;
+    top: -1000%;
+    left: 0;
+    color: white;
+    -webkit-transform: translateX(-100);
+    -moz-transform: translateX(-100);
+    -ms-transform: translateX(-100);
+    -o-transform: translateX(-100);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+  }
+  .mainHeader .headerNavSecond ul {
+    background-color: #272c32;
+    color: inherit;
+  }
+  .mainHeader .headerNavSecond ul li {
+    padding-left: 10px;
+    color: inherit;
+  }
+  .mainHeader .headerNavSecond ul li a {
+    padding: 13px;
+    display: block;
+    color: inherit;
+  }
+  .mainHeader .headerNavSecond ul li:hover {
+    background-color: #2e3339;
+  }
+  .mainHeader .headerNavSecond ul li:hover a {
+    color: #cfcfcf;
+  }
+  .mainHeader .headerNavSecond ul li:active {
+    background-color: #2b3036;
+  }
+  .mainHeader .headerNavSecond ul li:active a {
+    color: #afafaf;
+  }
+  .mainHeader .headerNavSecond.active {
+    top: 0;
+  }
+}
+
+.auth {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../assets//svg/telebyteBackground.svg"), -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(255, 255, 255, 0)), to(#1e1e1e)), -webkit-gradient(linear, left bottom, left top, color-stop(100%, #2b3137), to(#2b3137));
+  background-image: url("../assets//svg/telebyteBackground.svg"), linear-gradient(180deg, rgba(255, 255, 255, 0) 100%, #1e1e1e), linear-gradient(360deg, #2b3137 100%, #2b3137);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.auth .authTextEnter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  text-align: center;
+  width: 600px;
+  height: 200px;
+  overflow: hidden;
+  background-image: url("../assets/img/background.png"), -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(255, 255, 255, 0)), to(#fae8ff)), -webkit-gradient(linear, left bottom, left top, color-stop(32%, #d5e2ff), to(#fdfff6));
+  background-image: url("../assets/img/background.png"), linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #fae8ff), linear-gradient(360deg, #d5e2ff 32%, #fdfff6);
+  background-position: center;
+  background-size: cover;
+  border: 1px solid rgba(100, 100, 100, 0.2);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.auth .authTextEnter .authTextHeading {
+  font-size: 22px;
+}
+
+.auth .authTextEnter .authTextDesc {
+  width: 70%;
+}
+
+.auth .authTextEnter .authTextDesc span {
+  font-size: 17px;
+  padding: 15px;
+  margin: 5px;
+}
+
+.auth .authCard {
+  border-radius: 5px;
+  width: 450px;
+  height: 500px;
+  background-color: white;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), 0 6px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), 0 6px 16px 0 rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.auth .authCard .authToggleSection {
+  width: 100%;
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.auth .authCard .authToggleSection .authToggle {
+  cursor: pointer;
+  position: relative;
+  font-weight: 400;
+  font-size: 18px;
+  height: 100%;
+  background-color: #f0f0ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.auth .authCard .authToggleSection .authToggle.authActiveTab {
+  -webkit-box-flex: 1.5;
+      -ms-flex-positive: 1.5;
+          flex-grow: 1.5;
+  background-color: white;
+  color: #272c32;
+  font-weight: 700;
+}
+
+.auth .authCard .authToggleSection .authToggle1 {
+  border-top-left-radius: 5px;
+}
+
+.auth .authCard .authToggleSection .authToggle1.authActiveTab {
+  z-index: 1;
+  -webkit-box-shadow: 5px 0px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 0px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.auth .authCard .authToggleSection .authToggle2 {
+  border-top-right-radius: 5px;
+}
+
+.auth .authCard .authToggleSection .authToggle2.authActiveTab {
+  z-index: 1;
+  -webkit-box-shadow: -5px 0px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: -5px 0px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.auth .authCard .mainAuthSectionForm {
+  width: 100%;
+  height: 90%;
+  border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+}
+
+.auth .authCard .mainAuthSectionForm .registerForm,
+.auth .authCard .mainAuthSectionForm .loginForm {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.auth .authCard .mainAuthSectionForm .registerForm .authInput,
+.auth .authCard .mainAuthSectionForm .loginForm .authInput {
+  transition: all 0.8s;
+  border: none;
+  border: 2px solid transparent;
+  background-color: #f0f0f0;
+  font-size: 18px;
+  width: 85%;
+  padding: 12px 15px;
+  margin: 10px;
+  -webkit-box-shadow: inset 1px 4px 5px rgba(0, 0, 0, 0.1), 0 0 0 transparent;
+          box-shadow: inset 1px 4px 5px rgba(0, 0, 0, 0.1), 0 0 0 transparent;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  -o-transition: all 0.8s;
+}
+
+.auth .authCard .mainAuthSectionForm .registerForm .authInput:hover, .auth .authCard .mainAuthSectionForm .registerForm .authInput:active, .auth .authCard .mainAuthSectionForm .registerForm .authInput:focus,
+.auth .authCard .mainAuthSectionForm .loginForm .authInput:hover,
+.auth .authCard .mainAuthSectionForm .loginForm .authInput:active,
+.auth .authCard .mainAuthSectionForm .loginForm .authInput:focus {
+  border-bottom: 2px solid #2b2d42ff;
+}
+
+.auth .authCard .mainAuthSectionForm .registerForm .authInput:first-child,
+.auth .authCard .mainAuthSectionForm .loginForm .authInput:first-child {
+  margin-top: 25px;
+}
+
+.auth .authCard .mainAuthSectionForm .registerForm .submitButton,
+.auth .authCard .mainAuthSectionForm .loginForm .submitButton {
+  cursor: pointer;
+  color: white;
+  border-radius: 6px;
+  font-size: 18px;
+  border: none;
+  padding: 15px;
+  width: 70%;
+  margin: 20px;
+  background-color: #1c44b9;
+  -webkit-box-shadow: 0 4px 12px 0 rgba(28, 68, 185, 0.6);
+          box-shadow: 0 4px 12px 0 rgba(28, 68, 185, 0.6);
+  transform: scale(0.98);
+  transition: all 0.3s ease;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  -o-transform: scale(0.98);
+}
+
+.auth .authCard .mainAuthSectionForm .registerForm .submitButton:hover,
+.auth .authCard .mainAuthSectionForm .loginForm .submitButton:hover {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+
+.auth .authCard .mainAuthSectionForm .registerForm .submitButton:active,
+.auth .authCard .mainAuthSectionForm .loginForm .submitButton:active {
+  transform: scale(0.98);
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  -o-transform: scale(0.98);
+}
+
+.auth .authCard .mainAuthSectionForm .loginForm .loginRightSection {
+  margin-top: 25px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.auth .authCard .mainAuthSectionForm .loginForm .loginRightSection .forgotPassText {
+  cursor: pointer;
+  color: #097bbfff;
+  margin-right: 30px;
+  padding: 5px;
+}
+
+.auth .authCard .mainAuthSectionForm .loginForm .loginRightSection .forgotPassText:hover {
+  text-decoration: underline;
+}
+
+.auth .authCard .mainAuthSectionForm .loginForm .loginRightSection .submitButton {
+  cursor: pointer;
+  color: white;
+  border-radius: 6px;
+  font-size: 18px;
+  border: none;
+  padding: 15px;
+  width: 50%;
+  margin: 15px 25px;
+  background-color: #1c44b9;
+  -webkit-box-shadow: 0 4px 12px 0 rgba(28, 68, 185, 0.6);
+          box-shadow: 0 4px 12px 0 rgba(28, 68, 185, 0.6);
+  transform: scale(0.98);
+  transition: all 0.3s ease;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  -o-transform: scale(0.98);
+}
+
+@media screen and (max-width: 1200px) {
+  .auth {
+    width: 100%;
+    height: 900px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .auth .authTextEnter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 10px;
+    text-align: center;
+    width: 600px;
+    height: 200px;
+    background-color: #097bbfff;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+  }
+  .auth .authTextEnter .authTextHeading {
+    font-size: 22px;
+  }
+  .auth .authTextEnter .authTextDesc {
+    width: 70%;
+    margin: 5px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 774px) {
+  .auth {
+    width: 100%;
+    height: 90vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .auth .authTextEnter {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    margin-bottom: 45px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    background-color: #097bbfff;
+    border-radius: 1px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+  }
+  .auth .authTextEnter .authTextHeading {
+    font-size: 22px;
+  }
+  .auth .authTextEnter .authTextDesc {
+    width: 70%;
+    margin: 5px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .auth .authTextEnter {
+    margin-bottom: 5px;
+  }
+  .auth .authCard {
+    width: 100%;
+    height: 100%;
+  }
+  .auth .authCard .authToggleSection {
+    height: 8%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .auth .authTextEnter {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    background-color: #097bbfff;
+    border-radius: 1px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+  }
+  .auth .authTextEnter .authTextHeading {
+    font-size: 16px;
+  }
+  .auth .authTextEnter .authTextDesc {
+    width: 70%;
+  }
+  .auth .authTextEnter .authTextDesc span {
+    font-size: 16px;
+    margin: 5px;
+    padding: 15px;
+  }
+}
+
+/* PASSWORD STRENGTH CHECKER METER */
+.passwordStrengthMeter {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.passwordStrengthMeter .passwordStrengthMeterProgress {
+  width: 90%;
+  height: 8px;
+  background-color: #efefef;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.passwordStrengthMeter .passwordStrengthMeterProgress .passStrength {
+  transition: all 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  height: 8px;
+  border-radius: 3px;
+  width: 0%;
+  -webkit-transition: all 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -moz-transition: all 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -ms-transition: all 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -o-transition: all 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.passwordStrengthMeter .passwordStrengthMeterProgress .weakPass {
+  background-color: #f25f5c;
+  width: 25%;
+}
+
+.passwordStrengthMeter .passwordStrengthMeterProgress .fairPass {
+  background-color: #ffe066;
+  width: 50%;
+}
+
+.passwordStrengthMeter .passwordStrengthMeterProgress .goodPass {
+  background-color: #247ba0;
+  width: 75%;
+}
+
+.passwordStrengthMeter .passwordStrengthMeterProgress .strongPass {
+  background-color: #70c1b3;
+  width: 100%;
+}
+
+.passwordStrengthMeter .passwordStrengthMeterLabel {
+  font-size: 14px;
+}
+
+.mainFooterEntry {
+  text-align: center;
+  width: 100%;
+  min-height: 200px;
+  background: #272c32;
+  color: white;
+  padding: 15px 10px;
+  color: white;
+}
+
+.mainFooterEntry .footer {
+  color: inherit;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainFooterEntry .footer .footerHeader {
+  color: inherit;
+  margin-right: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainFooterEntry .footer .footerHeader h3 {
+  margin-bottom: 10px;
+  color: inherit;
+  text-align: start;
+}
+
+.mainFooterEntry .footer .footerHeader h3 a {
+  color: inherit;
+}
+
+.mainFooterEntry .footer .footerHeader span {
+  color: #dfdfdf;
+  text-align: start;
+  width: 360px;
+}
+
+.mainFooterEntry .footer .footerSections {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainFooterEntry .footer .footerSections .footerSection {
+  padding: 10px;
+  margin-right: 15px;
+  margin-left: 15px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainFooterEntry .footer .footerSections .footerSection h4 {
+  text-align: start;
+  color: white;
+  padding: 5px 10px;
+}
+
+.mainFooterEntry .footer .footerSections .footerSection ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.mainFooterEntry .footer .footerSections .footerSection ul li {
+  padding: 5px 10px;
+  color: #dfdfdf;
+}
+
+.mainFooterEntry .footer .footerSections .footerSection ul li a {
+  color: inherit;
+}
+
+@media screen and (max-width: 860px) {
+  .mainFooterEntry .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mainFooterEntry .footer .footerHeader h3 {
+    text-align: center;
+  }
+  .mainFooterEntry .footer .footerHeader span {
+    text-align: center;
+  }
+  .mainFooterEntry .footer .footerSections {
+    margin-top: 10px;
+  }
+  .mainFooterEntry .footer .footerSections .footerSection {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .mainFooterEntry {
+    padding: 20px 5px;
+  }
+  .mainFooterEntry .footer .footerHeader {
+    margin: 10px 10px;
+    padding: 10px;
+    margin-right: 15px;
+    margin-left: 15px;
+    width: 100%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .mainFooterEntry .footer .footerHeader h3 {
+    text-align: start;
+  }
+  .mainFooterEntry .footer .footerHeader span {
+    width: 90%;
+    text-align: start;
+  }
+  .mainFooterEntry .footer .footerSections {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=previous.css.map */

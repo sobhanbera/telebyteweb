@@ -1,40 +1,37 @@
-/* Montserrat */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-/* Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* Karla */
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-/* Roboto */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-/* Open Sans */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 /* Yeseva One */
 @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 /* Inter */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;900&display=swap");
+/* Poppins */
+/* Montserrat */
+/* Open Sans */
+/* Roboto */
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+          box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  list-style-type: none;
   outline: 0;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
 }
 
 *::-moz-selection {
-  outline: 0;
-  color: #000000;
-  background: #dfdfdf;
+  background-color: #ebebeb;
+  color: black;
 }
 
 *::selection {
-  outline: 0;
-  color: #000000;
-  background: #dfdfdf;
+  background-color: #ebebeb;
+  color: black;
 }
 
 ul,
@@ -49,17 +46,94 @@ a {
 }
 
 body {
-  /* i know this is default value of font-size just for remebering purpose */
   font-size: 16px;
   font-family: "Karla", sans-serif;
-  scroll-behavior: smooth;
+}
+
+.editText {
+  display: block;
+  border: 2px solid transparent;
+  background-color: #ebebeb;
+  font-size: 17px;
+  max-width: 85%;
+  width: 350px;
+  padding: 8px 15px;
+  margin: 10px;
+  -webkit-box-shadow: inset 1px 4px 5px rgba(0, 0, 0, 0.1), 0 0 0 transparent;
+          box-shadow: inset 1px 4px 5px rgba(0, 0, 0, 0.1), 0 0 0 transparent;
+  border-radius: 3px;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.editText:hover, .editText:active, .editText:focus {
+  border-bottom: 2px solid #011627;
+}
+
+.primaryButton {
+  display: block;
+  cursor: pointer;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  border: none;
+  padding: 11px;
+  margin: 20px auto;
+  width: 200px;
+  max-width: 12%;
+  background-color: #1c44b9;
+  -webkit-box-shadow: 0 4px 12px 0 rgba(28, 68, 185, 0.6);
+          box-shadow: 0 4px 12px 0 rgba(28, 68, 185, 0.6);
+  transform: scale(0.99);
+  transition: all 0.3s ease;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transform: scale(0.99);
+  -moz-transform: scale(0.99);
+  -ms-transform: scale(0.99);
+  -o-transform: scale(0.99);
+}
+
+.primaryButton:hover {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+
+.primaryButton:active {
+  transform: scale(0.99);
+  -webkit-transform: scale(0.99);
+  -moz-transform: scale(0.99);
+  -ms-transform: scale(0.99);
+  -o-transform: scale(0.99);
+}
+
+.textInput {
+  cursor: pointer;
+  color: #097bbf;
+  margin-right: 30px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.textInput:hover {
+  color: #077aff;
+  text-decoration: underline;
 }
 
 .loaderWrapper {
-  z-index: 100;
   position: fixed;
   top: 0;
-  transition: all 3s;
+  -webkit-transition: all 2s;
+  transition: all 2s;
   left: 0;
   width: 100%;
   height: 100%;
@@ -72,269 +146,504 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: rgba(200, 200, 200, 0.01);
+  background: white;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  -webkit-transition: all 3s;
-  -moz-transition: all 3s;
-  -ms-transition: all 3s;
-  -o-transition: all 3s;
 }
 
 .loaderWrapper .mainLoader {
   width: 100px;
   height: 100px;
   margin: 100px auto;
-  background-color: #272c32;
+  background-color: #011627;
   border-radius: 100%;
-  animation: sk-scaleout 1s infinite ease-in-out;
-  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+  animation: sk-scaleout 1s infinite ease-in-out alternate-reverse;
 }
 
 @-webkit-keyframes sk-scaleout {
   0% {
-    transform: scale(0);
     -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
+            transform: scale(0);
   }
   50% {
-    transform: scale(1);
     -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    opacity: 0;
-    transform: scale(0);
     -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
   }
 }
 
 @keyframes sk-scaleout {
   0% {
-    transform: scale(0);
     -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
+            transform: scale(0);
   }
   50% {
-    transform: scale(1);
     -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    opacity: 0;
-    transform: scale(0);
     -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
   }
 }
 
-.mainHeader {
+.MainPopupStart {
+  z-index: 1;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-animation-name: fromtoptopos;
+          animation-name: fromtoptopos;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
   width: 100%;
-  height: 55px;
-  background-color: #272c32;
+  height: 50px;
+  position: absolute;
+  top: -500%;
+  left: 0;
 }
 
-.mainHeader .header {
+.MainPopupStart .PopupFlex {
+  width: 100%;
+  height: 100%;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #7ff6df;
+}
+
+.MainPopupStart .PopupFlex .RightSection,
+.MainPopupStart .PopupFlex .LeftSection {
+  background-color: #7ff6df;
+  color: black;
+  height: 100%;
+}
+
+.MainPopupStart .PopupFlex .RightSection {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.MainPopupStart .PopupFlex .RightSection .PopupHeading {
+  text-align: center;
+}
+
+.MainPopupStart .PopupFlex .RightSection .PopupDetail {
+  text-align: center;
+}
+
+.MainPopupStart .PopupFlex .LeftSection {
+  cursor: pointer;
+  padding: 0px 5px;
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.MainPopupStart .PopupFlex .LeftSection svg {
+  width: 25px;
+  height: 25px;
+}
+
+.MainPopupStart.PopupGone {
+  top: 0;
+  -webkit-animation-name: fromtoptoposgone;
+          animation-name: fromtoptoposgone;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+
+@media (max-width: 500px) {
+  .MainPopupStart .PopupFlex .RightSection .PopupHeading {
+    font-size: 16px;
+  }
+  .MainPopupStart .PopupFlex .RightSection .PopupDetail {
+    font-size: 13px;
+  }
+}
+
+@-webkit-keyframes fromtoptopos {
+  0% {
+    top: -500%;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fromtoptopos {
+  0% {
+    top: -500%;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fromtoptoposgone {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -200%;
+    height: 0;
+    overflow: hidden;
+    display: none;
+  }
+}
+
+@keyframes fromtoptoposgone {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -200%;
+    height: 0;
+    overflow: hidden;
+    display: none;
+  }
+}
+
+.MainAppStarting {
+  font-size: 16px;
+}
+
+.HeaderStart {
+  background-color: #011627;
+  width: 100%;
+  height: 60px;
+}
+
+.HeaderStart .MainHeader {
+  width: 100%;
+  height: 100%;
+  background-color: #011627;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.HeaderStart .MainHeader svg {
+  cursor: pointer;
+  height: 35px;
+  width: auto;
+  fill: white;
+}
+
+.HeaderStart .MainHeader .HeaderMenuIcon {
+  margin-left: 20px;
+  width: 35px;
+  padding: 6px;
+}
+
+.HeaderStart .MainHeader .HeaderMenuIcon:active ~ .HeaderMenu,
+.HeaderStart .MainHeader .HeaderMenuIcon:focus ~ .HeaderMenu {
+  top: 100px;
+}
+
+.HeaderStart .MainHeader .TBLogo {
+  height: 32px;
+}
+
+.HeaderStart .MainHeader .HeaderPsuedoElement {
+  margin-right: 20px;
+  width: 35px;
+  padding: 6px;
+}
+
+.HeaderMenu {
+  margin: 0px;
+  padding: 0px 20px;
+  display: none;
+  -webkit-transition: top 0.5s;
+  transition: top 0.5s;
+  width: 100%;
+  background-color: #011627;
+}
+
+.HeaderMenu ul li {
+  padding: 10px 15px;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  background-color: #011627;
+}
+
+.HeaderMenu ul li a {
+  width: 100%;
+  font-weight: 500;
+  display: block;
+  text-align: start;
+  color: white;
+}
+
+.HeaderMenu ul li a:hover {
+  color: #dfdfdf;
+}
+
+.HeaderMenu ul li:last-child {
+  padding: 15px;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 1000px;
-  height: 100%;
-  z-index: 33;
-  margin: 0 auto;
 }
 
-.mainHeader .header .headerMenu {
-  display: none;
-}
-
-.mainHeader .header .headerMenu svg {
-  width: 35px;
+.HeaderMenu ul li:last-child .HeaderSignOutSvg {
   fill: white;
-  cursor: pointer;
 }
 
-.mainHeader .header .headerLogo {
-  height: 65%;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+.HeaderMenu ul li:last-child span {
+  padding-left: 10px;
 }
 
-.mainHeader .header .headerLogo a {
-  height: 100%;
-  text-decoration: none;
+.HeaderMenu ul li:hover {
+  background-color: #091e2f;
+  color: #efefef;
 }
 
-.mainHeader .header .headerLogo a svg {
-  height: 100%;
-}
-
-.mainHeader .header .headerNav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  list-style-type: none;
-}
-
-.mainHeader .header .headerNav ul li {
-  border-radius: 5px;
-  color: #ffffffff;
-  margin: 0 10px;
-  padding: 5px 10px;
-  list-style: none;
-  list-style-type: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-}
-
-.mainHeader .header .headerNav ul li a {
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-}
-
-.mainHeader .header .headerNav ul li .customHeaderAnchor {
-  display: none;
-}
-
-.mainHeader .header .headerNav ul li:hover {
-  background-color: #2e3339;
-}
-
-.mainHeader .header .headerNav ul li:hover a {
+.HeaderMenu ul li:active {
+  background-color: #112635;
   color: #cfcfcf;
 }
 
-.mainHeader .header .headerNav ul li:active {
-  background-color: #2b3036;
+.ShowMenu {
+  display: block;
 }
 
-.mainHeader .header .headerNav ul li:active a {
-  color: #afafaf;
+.FooterStart {
+  width: 100%;
+  min-height: 150px;
+  background-color: #011627;
+  color: white;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.mainHeader .header .headerProfile img {
-  cursor: pointer;
-  border-radius: 50%;
-  border: 1px solid white;
-  max-height: 35px;
-  max-width: 35px;
-  height: 35px;
-  width: auto;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+.FooterStart .MainFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.mainHeader .headerNavSecond {
-  display: none;
-  opacity: 0;
-  z-index: -1;
+.FooterStart .MainFooter .FooterHeading {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-@media screen and (max-width: 1100px) {
-  .mainHeader .header {
-    width: 80%;
-    margin: 0 auto;
+.FooterStart .MainFooter .FooterHeading h2 {
+  padding: 5px;
+}
+
+.FooterStart .MainFooter .FooterHeading p {
+  padding: 5px;
+  max-width: 300px;
+}
+
+.FooterStart .MainFooter .FooterSection {
+  margin: 15px;
+  padding: 15px;
+}
+
+.FooterStart .MainFooter .FooterSection h4 {
+  padding: 5px;
+}
+
+.FooterStart .MainFooter .FooterSection ul {
+  padding: 5px;
+}
+
+.FooterStart .MainFooter .FooterSection ul li {
+  padding: 4px 0px;
+}
+
+.FooterStart .MainFooter .FooterSection ul li a {
+  color: white;
+}
+
+.FooterStart .MainFooter .FooterSection ul li a:hover {
+  color: #bfbfbf;
+}
+
+.FooterStart .FooterContribute p {
+  padding: 10px 0px 10px 0px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-animation-name: bigandsmall;
+          animation-name: bigandsmall;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  color: white;
+}
+
+.FooterStart .FooterContribute p a {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: inherit;
+}
+
+.FooterStart .FooterContribute p a:hover {
+  color: #bfbfbf;
+}
+
+@-webkit-keyframes bigandsmall {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
 }
 
-@media screen and (max-width: 800px) {
-  .mainHeader .header {
-    width: 95%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+@keyframes bigandsmall {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
-  .mainHeader .header .headerMenu {
-    display: inline;
+  100% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
-  .mainHeader .header .headerMenu svg {
+}
+
+@media screen and (max-width: 774px) {
+  .FooterStart .MainFooter {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .FooterStart .MainFooter .FooterHeading {
+    margin: 5px;
+  }
+  .FooterStart .MainFooter .FooterHeading h2,
+  .FooterStart .MainFooter .FooterHeading p {
+    padding: 3px;
+  }
+  .FooterStart .MainFooter .FooterSection {
+    margin: 8px 5px;
+    padding: 5px 0px;
+  }
+  .FooterStart .MainFooter .FooterSection h4 {
     padding: 5px;
   }
-  .mainHeader .header .headerLogo a svg {
-    height: 85%;
-  }
-  .mainHeader .header .headerNav {
-    display: none;
-  }
-  .mainHeader .headerNavSecond {
-    transition: all 0.5s;
-    transform: translateX(-100);
-    position: relative;
-    display: inline;
-    top: -1000%;
-    left: 0;
-    color: white;
-    -webkit-transform: translateX(-100);
-    -moz-transform: translateX(-100);
-    -ms-transform: translateX(-100);
-    -o-transform: translateX(-100);
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-  }
-  .mainHeader .headerNavSecond ul {
-    background-color: #272c32;
-    color: inherit;
-  }
-  .mainHeader .headerNavSecond ul li {
-    padding-left: 10px;
-    color: inherit;
-  }
-  .mainHeader .headerNavSecond ul li a {
-    padding: 13px;
-    display: block;
-    color: inherit;
-  }
-  .mainHeader .headerNavSecond ul li:hover {
-    background-color: #2e3339;
-  }
-  .mainHeader .headerNavSecond ul li:hover a {
-    color: #cfcfcf;
-  }
-  .mainHeader .headerNavSecond ul li:active {
-    background-color: #2b3036;
-  }
-  .mainHeader .headerNavSecond ul li:active a {
-    color: #afafaf;
-  }
-  .mainHeader .headerNavSecond.active {
-    top: 0;
+  .FooterStart .MainFooter .FooterSection ul li:last-child {
+    padding-bottom: 2px;
   }
 }
 
-.auth {
-  width: 100%;
-  height: 100vh;
+.MainComponents {
+  min-height: 100vh;
+  background-color: #f45b69;
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+
+.AuthStart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -344,14 +653,18 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("../assets//svg/telebyteBackground.svg"), -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(255, 255, 255, 0)), to(#1e1e1e)), -webkit-gradient(linear, left bottom, left top, color-stop(100%, #2b3137), to(#2b3137));
-  background-image: url("../assets//svg/telebyteBackground.svg"), linear-gradient(180deg, rgba(255, 255, 255, 0) 100%, #1e1e1e), linear-gradient(360deg, #2b3137 100%, #2b3137);
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 25px;
+  background-color: #faa300;
+  background: url("../assets/svg/telebyteBackground.svg"), -webkit-gradient(linear, left top, left bottom, from(#20262b), color-stop(#1c2228), to(#191f25));
+  background: url("../assets/svg/telebyteBackground.svg"), linear-gradient(180deg, #20262b, #1c2228, #191f25);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.auth .authTextEnter {
+.AuthStart .authTextEnter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -376,53 +689,47 @@ body {
   background-size: cover;
   border: 1px solid rgba(100, 100, 100, 0.2);
   border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
 }
 
-.auth .authTextEnter .authTextHeading {
+.AuthStart .authTextEnter .authTextHeading {
   font-size: 22px;
 }
 
-.auth .authTextEnter .authTextDesc {
-  width: 70%;
-}
-
-.auth .authTextEnter .authTextDesc span {
+.AuthStart .authTextEnter .authTextDesc {
+  width: 74%;
   font-size: 17px;
   padding: 15px;
   margin: 5px;
 }
 
-.auth .authCard {
+.AuthStart .authTextEnter .authTextDesc span {
+  width: 100%;
+  font-size: 17px;
+}
+
+.AuthStart .AuthCard {
   border-radius: 5px;
   width: 450px;
   height: 500px;
   background-color: white;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), 0 6px 16px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), 0 6px 16px 0 rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
 }
 
-.auth .authCard .authToggleSection {
-  width: 100%;
+.AuthStart .AuthCard .AuthToggleSection {
   height: 10%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-bottom: 1px solid #dfdfdf;
 }
 
-.auth .authCard .authToggleSection .authToggle {
+.AuthStart .AuthCard .AuthToggleSection .RegisterBtn,
+.AuthStart .AuthCard .AuthToggleSection .LoginBtn {
   cursor: pointer;
   position: relative;
   font-weight: 400;
-  font-size: 18px;
   height: 100%;
   background-color: #f0f0ff;
   display: -webkit-box;
@@ -439,54 +746,45 @@ body {
           flex-grow: 1;
 }
 
-.auth .authCard .authToggleSection .authToggle.authActiveTab {
+.AuthStart .AuthCard .AuthToggleSection .RegisterBtn.authActiveTab,
+.AuthStart .AuthCard .AuthToggleSection .LoginBtn.authActiveTab {
+  font-weight: 700;
   -webkit-box-flex: 1.5;
       -ms-flex-positive: 1.5;
           flex-grow: 1.5;
+  color: #011627;
   background-color: white;
-  color: #272c32;
-  font-weight: 700;
 }
 
-.auth .authCard .authToggleSection .authToggle1 {
+.AuthStart .AuthCard .AuthToggleSection .RegisterBtn {
   border-top-left-radius: 5px;
 }
 
-.auth .authCard .authToggleSection .authToggle1.authActiveTab {
-  z-index: 1;
-  -webkit-box-shadow: 5px 0px 5px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 5px 0px 5px 0 rgba(0, 0, 0, 0.2);
+.AuthStart .AuthCard .AuthToggleSection .RegisterBtn.authActiveTab {
+  -webkit-box-shadow: 4px 2px 15px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 2px 15px 0 rgba(0, 0, 0, 0.2);
 }
 
-.auth .authCard .authToggleSection .authToggle2 {
+.AuthStart .AuthCard .AuthToggleSection .LoginBtn {
   border-top-right-radius: 5px;
 }
 
-.auth .authCard .authToggleSection .authToggle2.authActiveTab {
-  z-index: 1;
-  -webkit-box-shadow: -5px 0px 5px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: -5px 0px 5px 0 rgba(0, 0, 0, 0.2);
+.AuthStart .AuthCard .AuthToggleSection .LoginBtn.authActiveTab {
+  -webkit-box-shadow: 0px 2px 15px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 15px 0 rgba(0, 0, 0, 0.2);
 }
 
-.auth .authCard .mainAuthSectionForm {
+.AuthStart .AuthCard .MainAuthSection {
   width: 100%;
   height: 90%;
   border-radius: 0 0 5px 5px;
-  -webkit-border-radius: 0 0 5px 5px;
-  -moz-border-radius: 0 0 5px 5px;
-  -ms-border-radius: 0 0 5px 5px;
-  -o-border-radius: 0 0 5px 5px;
 }
 
-.auth .authCard .mainAuthSectionForm .registerForm,
-.auth .authCard .mainAuthSectionForm .loginForm {
+.AuthStart .AuthCard .MainAuthSection .RegisterForm,
+.AuthStart .AuthCard .MainAuthSection .LoginForm {
   width: 100%;
   height: 100%;
   border-radius: 0 0 5px 5px;
-  -webkit-border-radius: 0 0 5px 5px;
-  -moz-border-radius: 0 0 5px 5px;
-  -ms-border-radius: 0 0 5px 5px;
-  -o-border-radius: 0 0 5px 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -499,89 +797,65 @@ body {
           align-items: center;
 }
 
-.auth .authCard .mainAuthSectionForm .registerForm .authInput,
-.auth .authCard .mainAuthSectionForm .loginForm .authInput {
+.AuthStart .AuthCard .MainAuthSection .RegisterForm .AuthInput,
+.AuthStart .AuthCard .MainAuthSection .LoginForm .AuthInput {
+  -webkit-transition: all 0.8s;
   transition: all 0.8s;
-  border: none;
   border: 2px solid transparent;
-  background-color: #f0f0f0;
-  font-size: 18px;
+  background-color: #ebebeb;
+  font-size: 17px;
   width: 85%;
   padding: 12px 15px;
   margin: 10px;
-  -webkit-box-shadow: inset 1px 4px 5px rgba(0, 0, 0, 0.1), 0 0 0 transparent;
-          box-shadow: inset 1px 4px 5px rgba(0, 0, 0, 0.1), 0 0 0 transparent;
+  -webkit-box-shadow: inset 2px 6px 8px rgba(0, 0, 0, 0.1), 0 0 0 transparent;
+          box-shadow: inset 2px 6px 8px rgba(0, 0, 0, 0.1), 0 0 0 transparent;
   border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  -ms-transition: all 0.8s;
-  -o-transition: all 0.8s;
 }
 
-.auth .authCard .mainAuthSectionForm .registerForm .authInput:hover, .auth .authCard .mainAuthSectionForm .registerForm .authInput:active, .auth .authCard .mainAuthSectionForm .registerForm .authInput:focus,
-.auth .authCard .mainAuthSectionForm .loginForm .authInput:hover,
-.auth .authCard .mainAuthSectionForm .loginForm .authInput:active,
-.auth .authCard .mainAuthSectionForm .loginForm .authInput:focus {
+.AuthStart .AuthCard .MainAuthSection .RegisterForm .AuthInput:hover, .AuthStart .AuthCard .MainAuthSection .RegisterForm .AuthInput:active, .AuthStart .AuthCard .MainAuthSection .RegisterForm .AuthInput:focus,
+.AuthStart .AuthCard .MainAuthSection .LoginForm .AuthInput:hover,
+.AuthStart .AuthCard .MainAuthSection .LoginForm .AuthInput:active,
+.AuthStart .AuthCard .MainAuthSection .LoginForm .AuthInput:focus {
   border-bottom: 2px solid #2b2d42ff;
 }
 
-.auth .authCard .mainAuthSectionForm .registerForm .authInput:first-child,
-.auth .authCard .mainAuthSectionForm .loginForm .authInput:first-child {
+.AuthStart .AuthCard .MainAuthSection .RegisterForm .AuthInput:first-child,
+.AuthStart .AuthCard .MainAuthSection .LoginForm .AuthInput:first-child {
   margin-top: 25px;
 }
 
-.auth .authCard .mainAuthSectionForm .registerForm .submitButton,
-.auth .authCard .mainAuthSectionForm .loginForm .submitButton {
+.AuthStart .AuthCard .MainAuthSection .RegisterForm .SubmitButton,
+.AuthStart .AuthCard .MainAuthSection .LoginForm .SubmitButton {
   cursor: pointer;
   color: white;
   border-radius: 6px;
   font-size: 18px;
   border: none;
   padding: 15px;
-  width: 70%;
-  margin: 20px;
+  width: 60%;
+  margin: 15px 25px;
   background-color: #1c44b9;
   -webkit-box-shadow: 0 4px 12px 0 rgba(28, 68, 185, 0.6);
           box-shadow: 0 4px 12px 0 rgba(28, 68, 185, 0.6);
-  transform: scale(0.98);
-  transition: all 0.3s ease;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
   -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -webkit-transform: scale(0.98);
-  -moz-transform: scale(0.98);
-  -ms-transform: scale(0.98);
-  -o-transform: scale(0.98);
+  transition: all 0.3s ease;
 }
 
-.auth .authCard .mainAuthSectionForm .registerForm .submitButton:hover,
-.auth .authCard .mainAuthSectionForm .loginForm .submitButton:hover {
-  transform: scale(1);
+.AuthStart .AuthCard .MainAuthSection .RegisterForm .SubmitButton:hover,
+.AuthStart .AuthCard .MainAuthSection .LoginForm .SubmitButton:hover {
   -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
+          transform: scale(1);
 }
 
-.auth .authCard .mainAuthSectionForm .registerForm .submitButton:active,
-.auth .authCard .mainAuthSectionForm .loginForm .submitButton:active {
-  transform: scale(0.98);
+.AuthStart .AuthCard .MainAuthSection .RegisterForm .SubmitButton:active,
+.AuthStart .AuthCard .MainAuthSection .LoginForm .SubmitButton:active {
   -webkit-transform: scale(0.98);
-  -moz-transform: scale(0.98);
-  -ms-transform: scale(0.98);
-  -o-transform: scale(0.98);
+          transform: scale(0.98);
 }
 
-.auth .authCard .mainAuthSectionForm .loginForm .loginRightSection {
+.AuthStart .AuthCard .MainAuthSection .LoginForm .loginRightSection {
   margin-top: 25px;
   width: 100%;
   display: -webkit-box;
@@ -599,18 +873,18 @@ body {
           justify-content: center;
 }
 
-.auth .authCard .mainAuthSectionForm .loginForm .loginRightSection .forgotPassText {
+.AuthStart .AuthCard .MainAuthSection .LoginForm .loginRightSection .forgotPassText {
   cursor: pointer;
-  color: #097bbfff;
+  color: #097bbf;
   margin-right: 30px;
   padding: 5px;
 }
 
-.auth .authCard .mainAuthSectionForm .loginForm .loginRightSection .forgotPassText:hover {
+.AuthStart .AuthCard .MainAuthSection .LoginForm .loginRightSection .forgotPassText:hover {
   text-decoration: underline;
 }
 
-.auth .authCard .mainAuthSectionForm .loginForm .loginRightSection .submitButton {
+.AuthStart .AuthCard .MainAuthSection .LoginForm .loginRightSection .SubmitButton {
   cursor: pointer;
   color: white;
   border-radius: 6px;
@@ -639,7 +913,7 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-  .auth {
+  .AuthStart {
     width: 100%;
     height: 900px;
     display: -webkit-box;
@@ -656,7 +930,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
   }
-  .auth .authTextEnter {
+  .AuthStart .authTextEnter {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -674,17 +948,17 @@ body {
     text-align: center;
     width: 600px;
     height: 200px;
-    background-color: #097bbfff;
+    background-color: #097bbf;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
   }
-  .auth .authTextEnter .authTextHeading {
+  .AuthStart .authTextEnter .authTextHeading {
     font-size: 22px;
   }
-  .auth .authTextEnter .authTextDesc {
+  .AuthStart .authTextEnter .authTextDesc {
     width: 70%;
     margin: 5px;
     padding: 15px;
@@ -692,7 +966,7 @@ body {
 }
 
 @media screen and (max-width: 774px) {
-  .auth {
+  .AuthStart {
     width: 100%;
     height: 90vh;
     display: -webkit-box;
@@ -709,7 +983,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
   }
-  .auth .authTextEnter {
+  .AuthStart .authTextEnter {
     width: 100%;
     height: 200px;
     padding: 10px;
@@ -728,17 +1002,17 @@ body {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
-    background-color: #097bbfff;
+    background-color: #097bbf;
     border-radius: 1px;
     -webkit-border-radius: 1px;
     -moz-border-radius: 1px;
     -ms-border-radius: 1px;
     -o-border-radius: 1px;
   }
-  .auth .authTextEnter .authTextHeading {
+  .AuthStart .authTextEnter .authTextHeading {
     font-size: 22px;
   }
-  .auth .authTextEnter .authTextDesc {
+  .AuthStart .authTextEnter .authTextDesc {
     width: 70%;
     margin: 5px;
     padding: 15px;
@@ -746,20 +1020,20 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-  .auth .authTextEnter {
-    margin-bottom: 5px;
+  .AuthStart .authTextEnter {
+    margin-bottom: 1px;
   }
-  .auth .authCard {
+  .AuthStart .AuthCard {
     width: 100%;
     height: 100%;
   }
-  .auth .authCard .authToggleSection {
+  .AuthStart .AuthCard .AuthToggleSection {
     height: 8%;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .auth .authTextEnter {
+  .AuthStart .authTextEnter {
     width: 100%;
     height: 200px;
     padding: 10px;
@@ -777,28 +1051,28 @@ body {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
-    background-color: #097bbfff;
+    background-color: #097bbf;
     border-radius: 1px;
     -webkit-border-radius: 1px;
     -moz-border-radius: 1px;
     -ms-border-radius: 1px;
     -o-border-radius: 1px;
   }
-  .auth .authTextEnter .authTextHeading {
+  .AuthStart .authTextEnter .authTextHeading {
     font-size: 16px;
   }
-  .auth .authTextEnter .authTextDesc {
-    width: 70%;
-  }
-  .auth .authTextEnter .authTextDesc span {
-    font-size: 16px;
+  .AuthStart .authTextEnter .authTextDesc {
     margin: 5px;
     padding: 15px;
+    width: 95%;
+  }
+  .AuthStart .authTextEnter .authTextDesc span {
+    font-size: 16px;
   }
 }
 
-/* PASSWORD STRENGTH CHECKER METER */
 .passwordStrengthMeter {
+  padding: 8px;
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -816,7 +1090,7 @@ body {
 }
 
 .passwordStrengthMeter .passwordStrengthMeterProgress {
-  width: 90%;
+  width: 75%;
   height: 8px;
   background-color: #efefef;
   border-radius: 3px;
@@ -867,23 +1141,160 @@ body {
   width: 100%;
 }
 
+.passwordStrengthMeter .passwordStrengthMeterProgress .completePass {
+  background-color: #40ff40;
+}
+
 .passwordStrengthMeter .passwordStrengthMeterLabel {
   font-size: 14px;
 }
 
-.mainFooterEntry {
-  text-align: center;
-  width: 100%;
-  min-height: 200px;
-  background: #272c32;
-  color: white;
-  padding: 15px 10px;
-  color: white;
+.MainContentStart {
+  min-height: 100vh;
 }
 
-.mainFooterEntry .footer {
-  color: inherit;
+.FullProfile {
+  -webkit-animation-name: blurtonormal;
+          animation-name: blurtonormal;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  background: url("../assets/svg/telebyteBackground.svg");
+  background-size: contain;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat-y;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: #097bbf;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.FullProfile .ProfileCard {
+  border: 1px solid #bfbfbf;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 10px;
+  width: 60%;
+  border-radius: 6px;
+  -webkit-backdrop-filter: blur(35px) grayscale(10%);
+          backdrop-filter: blur(35px) grayscale(10%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.FullProfile .ProfileCard .ProfileCardLeft {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileImage {
+  width: 100%;
+  height: 130px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0px;
+}
+
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileImage img {
+  margin: 5px;
+  width: 130px;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileFollows {
+  margin: 10px 0px;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileFollows span {
+  font-size: 20px;
+}
+
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex h2 {
+  margin-left: 10px;
   padding: 5px;
+  font-family: "Karla", sans-serif;
+  font-size: 24px;
+}
+
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex p {
+  margin-left: 10px;
+  padding: 2px;
+  padding-left: 5px;
+  font-size: 17px;
+  font-family: "Karla", sans-serif;
+}
+
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileCardLeftLocation,
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileCardLeftStatus {
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  padding-left: 5px;
+}
+
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileCardLeftLocation h3,
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileCardLeftStatus h3 {
+  text-transform: uppercase;
+  color: inherit;
+  font-size: 20px;
+}
+
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial {
+  width: 100%;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -895,46 +1306,282 @@ body {
           align-items: center;
 }
 
-.mainFooterEntry .footer .footerHeader {
-  color: inherit;
-  margin-right: 25px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a {
+  text-decoration: none;
+  color: black;
 }
 
-.mainFooterEntry .footer .footerHeader h3 {
-  margin-bottom: 10px;
-  color: inherit;
-  text-align: start;
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg {
+  margin: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
 }
 
-.mainFooterEntry .footer .footerHeader h3 a {
-  color: inherit;
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.GithubIcon {
+  fill: black;
 }
 
-.mainFooterEntry .footer .footerHeader span {
-  color: #dfdfdf;
-  text-align: start;
-  width: 360px;
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.LinkedinIcon {
+  fill: #0e76a8;
 }
 
-.mainFooterEntry .footer .footerSections {
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.InstagramIcon {
+  fill: #cd486b;
 }
 
-.mainFooterEntry .footer .footerSections .footerSection {
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.FacebookIcon {
+  fill: #3b5998;
+}
+
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.TwitterIcon {
+  fill: #00acee;
+}
+
+.FullProfile .ProfileCard .ProfileCardRight {
+  width: 55%;
   padding: 10px;
-  margin-right: 15px;
-  margin-left: 15px;
+}
+
+.FullProfile .ProfileCard .ProfileCardRight .ProfileCardRightAbout {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.FullProfile .ProfileCard .ProfileCardRight .ProfileCardRightAbout h3 {
+  margin: 5px 0px;
+  color: inherit;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.FullProfile .ProfileCard .ProfileCardRight .ProfileCardRightExpertise {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.FullProfile .ProfileCard .ProfileCardRight .ProfileCardRightExpertise h3 {
+  margin: 5px 0px;
+  color: inherit;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.FullProfile .ProfileCard .ProfileCardRight .ProfileCardRightExpertise .ExpertiseContainer {
+  display: -ms-grid;
+  display: grid;
+  gap: 0.1rem;
+}
+
+.FullProfile .ProfileCard .ProfileCardRight .ProfileCardRightExpertise .ExpertiseContainer .ProfileCardRightExpertiseSpan {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #112635;
   color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.FullProfile .ProfileCard .ProfileCardRight .ProfileEducationSection {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.FullProfile .ProfileCard .ProfileCardRight .ProfileEducationSection h3 {
+  text-transform: uppercase;
+}
+
+.FullProfile .ProfileCard .ProfileCardRight .ProfileEducationSection .ProfileEducationCard {
+  padding: 5px 5px 5px 10px;
+  margin: 5px 0px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0px 8px 16px rgba(0, 0, 0, 0.2), 0px 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0px 8px 16px rgba(0, 0, 0, 0.2), 0px 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.FullProfile .ProfileCard .ProfileCardRight .ProfileEducationSection .ProfileEducationCard h4:nth-child(1) {
+  padding: 10px 5px 0px 6px;
+}
+
+.FullProfile .ProfileCard .ProfileCardRight .ProfileEducationSection .ProfileEducationCard h4:nth-child(2) {
+  padding: 5px 5px 8px 6px;
+}
+
+.FullProfile .ProfileCard .ProfileCardRight .ProfileEducationSection .ProfileEducationCard span {
+  padding: 5px 0px 10px 6px;
+}
+
+@media (max-width: 1700px) {
+  .FullProfile .ProfileCard {
+    width: 75%;
+  }
+}
+
+@media (max-width: 1450px) {
+  .FullProfile .ProfileCard {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .FullProfile .ProfileCard {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .FullProfile.ProfileIsDark .ProfileCard .ProfileCardRight {
+    border-left: 1px solid #bfbfbf;
+  }
+  .FullProfile.ProfileIsLight .ProfileCard .ProfileCardRight {
+    border-left: 1px solid #202020;
+  }
+}
+
+@media (max-width: 1000px) {
+  .FullProfile .ProfileCard {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .FullProfile .ProfileCard {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .FullProfile .ProfileCard .ProfileCardLeft {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  .FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex h2 {
+    text-align: center;
+  }
+  .FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex p {
+    text-align: center;
+  }
+  .FullProfile .ProfileCard .ProfileCardRight {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes blurtonormal {
+  0% {
+    -webkit-filter: blur(100px) grayscale(100%);
+            filter: blur(100px) grayscale(100%);
+  }
+  100% {
+    -webkit-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+  }
+}
+
+@keyframes blurtonormal {
+  0% {
+    -webkit-filter: blur(100px) grayscale(100%);
+            filter: blur(100px) grayscale(100%);
+  }
+  100% {
+    -webkit-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+  }
+}
+
+.DisplayNone {
+  display: none;
+  opacity: 0;
+}
+
+.ProfileIsLight .ProfileCard {
+  border: 1px solid #202020;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileImage img {
+  border: 1px solid #202020;
+}
+
+.ProfileIsLight .ProfileCard .centerThisPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.ProfileIsLight .ProfileCard .centerThisPart .ProfileCardLeftHRLine {
+  width: 95%;
+  border-top: 1px solid #202020;
+}
+
+.ProfileIsDark .ProfileCard {
+  border: 1px solid #bfbfbf;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.ProfileIsDark .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileImage img {
+  border: 1px solid #bfbfbf;
+}
+
+.ProfileIsDark .ProfileCard .centerThisPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.ProfileIsDark .ProfileCard .centerThisPart .ProfileCardLeftHRLine {
+  width: 95%;
+  border-top: 1px solid #bfbfbf;
+}
+
+.ErrorSectionStart {
+  width: 100%;
+  min-height: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -942,15 +1589,73 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.mainFooterEntry .footer .footerSections .footerSection h4 {
-  text-align: start;
-  color: white;
-  padding: 5px 10px;
+.ErrorSectionStart .TelebyteLogoInError {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.mainFooterEntry .footer .footerSections .footerSection ul {
+.ErrorSectionStart .TelebyteLogoInError svg {
+  width: 80%;
+}
+
+.ErrorSectionStart img {
+  width: 500px;
+  height: auto;
+}
+
+.ErrorSectionStart .ErrorSectionDetails {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ErrorSectionStart .ErrorSectionDetails h2 {
+  padding: 10px;
+}
+
+.ErrorSectionStart .ErrorSectionDetails p {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.ErrorSectionStart .ErrorSectionDetails p span {
+  font-weight: 700;
+  font-size: 20px;
+  color: #f87060;
+}
+
+@media (max-width: 700px) {
+  .ErrorSectionStart img {
+    width: 400px;
+  }
+}
+
+@media (max-width: 550px) {
+  .ErrorSectionStart img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 360px) {
+  .ErrorSectionStart img {
+    width: 200px;
+  }
+}
+
+.SettingSectionStart {
+  width: 100%;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -958,69 +1663,437 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Inter", sans-serif;
+}
+
+.SettingSectionStart .SettingArea {
+  font-family: "Inter", sans-serif;
+  width: 1000px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
 
-.mainFooterEntry .footer .footerSections .footerSection ul li {
-  padding: 5px 10px;
-  color: #dfdfdf;
+.SettingSectionStart .SettingArea .SettingNavigation {
+  width: 20%;
+  border-radius: 5px;
 }
 
-.mainFooterEntry .footer .footerSections .footerSection ul li a {
+.SettingSectionStart .SettingArea .SettingNavigation h4 {
+  color: #353535;
+  -webkit-transition: all 0s;
+  transition: all 0s;
+  padding: 8px 15px;
+  font-size: 16px;
+  border-bottom: 1px solid #bbbbbb;
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
+}
+
+.SettingSectionStart .SettingArea .SettingNavigation h4 a {
+  display: block;
+  padding: 4px;
+  -webkit-transition: all 0s;
+  transition: all 0s;
   color: inherit;
 }
 
-@media screen and (max-width: 860px) {
-  .mainFooterEntry .footer {
+.SettingSectionStart .SettingArea .SettingNavigation h4 a:hover, .SettingSectionStart .SettingArea .SettingNavigation h4 a:active {
+  color: inherit;
+}
+
+.SettingSectionStart .SettingArea .SettingNavigation h4:first-child {
+  border-radius: 5px 5px 0 0;
+  border-top: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
+  border-bottom: 1px solid #bbbbbb;
+  border-left: 1px solid #bbbbbb;
+}
+
+.SettingSectionStart .SettingArea .SettingNavigation h4:last-child {
+  border-radius: 0 0 5px 5px;
+  border-top: none;
+  border-right: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
+  border-left: 1px solid #aaaaaa;
+}
+
+.SettingSectionStart .SettingArea .SettingNavigation h4:hover, .SettingSectionStart .SettingArea .SettingNavigation h4:active {
+  color: black;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea {
+  width: 70%;
+  font-family: "Inter", sans-serif;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard {
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  margin: 25px 0;
+  border-radius: 5px;
+  border: 1px solid #cfcfcf;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop {
+  padding: 15px;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop h4 {
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop p {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop img {
+  border: 2px solid #dfdfdf;
+  border-radius: 50%;
+  margin-top: 5px;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+  height: 150px;
+  width: auto;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 280px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 8px 10px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 3px;
+  border: 1px solid #cfcfcf;
+  font-size: 15px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input:hover, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input:active, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input:focus {
+  border: 1px solid #202020;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input.Disabled:hover, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input.Disabled:active, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input.Disabled:focus {
+  border: 1px solid red;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea {
+  resize: none;
+  max-width: 50%;
+  max-height: 200px;
+  width: 50%;
+  height: 200px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 8px 10px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 3px;
+  border: 1px solid #cfcfcf;
+  font-size: 14px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea[disabled="true"]:hover {
+  border: 1px solid red;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea:hover, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea:active, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea:focus {
+  border: 1px solid #202020;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea.ShortHeightTextarea {
+  max-height: 75px;
+  height: 75px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input[name="color"] {
+  cursor: pointer;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input[name="color"]:hover, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input[name="color"]:active, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input[name="color"]:focus {
+  border: 2px solid #202020;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input[type="color"]::-webkit-color-swatch-wrapper {
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop .InputArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop .InputArea span {
+  margin: 5px;
+  text-decoration: underline;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .RandomButton {
+  padding: 10px 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardBottom {
+  font-size: 15px;
+  padding: 8px 5px;
+  color: #444444;
+  background-color: #f9f9f9;
+  border-radius: 0 0 5px 5px;
+  border-top: 1px solid #cfcfcf;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardBottom span {
+  display: block;
+  padding: 6px 10px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard:first-child {
+  margin-top: 0;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard:last-child {
+  margin-bottom: 0;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .ProfileEducationSection {
+  margin-top: -15px;
+  padding: 10px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .ProfileEducationSection .ProfileEducationCard {
+  border: 1px solid #cfcfcf;
+  padding: 5px 5px 5px 10px;
+  margin: 5px 0px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px 0 rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .ProfileEducationSection .ProfileEducationCard h4 {
+  font-size: 14px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .ProfileEducationSection .ProfileEducationCard h4:nth-child(1) {
+  padding: 10px 5px 0px 6px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .ProfileEducationSection .ProfileEducationCard h4:nth-child(2) {
+  padding: 5px 5px 8px 6px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .ProfileEducationSection .ProfileEducationCard span {
+  font-size: 13px;
+  padding: 5px 0px 10px 6px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .ProfileEducationSection .ProfileEducationCard .CardEduRight {
+  width: 16px;
+}
+
+.SettingSectionStart .SettingSubmitSection {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+.SettingSectionStart .SettingSubmitSection button {
+  cursor: pointer;
+  border: 1px solid #011627;
+  border-radius: 4px;
+  background-color: #011627;
+  color: white;
+  padding: 9px 20px;
+  min-width: 100px;
+  height: 36px;
+  font-size: 15px;
+  white-space: nowrap;
+  font-weight: 500;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.SettingSectionStart .SettingSubmitSection button:hover, .SettingSectionStart .SettingSubmitSection button:active {
+  color: #011627;
+  background-color: transparent;
+}
+
+.LightDarkButton {
+  cursor: pointer;
+  border: 1px solid #011627;
+  border-radius: 4px;
+  background-color: #011627;
+  color: white;
+  padding: 9px;
+  min-width: 100px;
+  height: 36px;
+  font-size: 15px;
+  white-space: nowrap;
+  font-weight: 500;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.LightDarkButton:hover, .LightDarkButton:active {
+  color: #011627;
+  background-color: transparent;
+}
+
+.LightDarkButton.topbottom {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1100px) {
+  .SettingSectionStart {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .mainFooterEntry .footer .footerHeader h3 {
-    text-align: center;
+  .SettingSectionStart .SettingArea {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .mainFooterEntry .footer .footerHeader span {
-    text-align: center;
-  }
-  .mainFooterEntry .footer .footerSections {
-    margin-top: 10px;
-  }
-  .mainFooterEntry .footer .footerSections .footerSection {
-    margin-right: 0;
-    margin-left: 0;
+  .SettingSectionStart .SettingArea .SettingNavigation {
+    display: none;
   }
 }
 
-@media screen and (max-width: 550px) {
-  .mainFooterEntry {
-    padding: 20px 5px;
-  }
-  .mainFooterEntry .footer .footerHeader {
-    margin: 10px 10px;
-    padding: 10px;
-    margin-right: 15px;
-    margin-left: 15px;
-    width: 100%;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-  .mainFooterEntry .footer .footerHeader h3 {
-    text-align: start;
-  }
-  .mainFooterEntry .footer .footerHeader span {
+@media (max-width: 800px) {
+  .SettingSectionStart .SettingArea {
     width: 90%;
-    text-align: start;
   }
-  .mainFooterEntry .footer .footerSections {
+  .SettingSectionStart .SettingArea .SettingMainWorkingArea {
     width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .SettingSectionStart .SettingArea {
+    width: 97%;
+  }
+  .SettingSectionStart .SettingArea .SettingMainWorkingArea {
+    width: 100%;
+  }
+  .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .RandomButton {
+    padding: 10px 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .RandomButton button {
+    max-width: 100px;
+    margin: 5px 10px;
   }
 }
 /*# sourceMappingURL=index.styles.module.css.map */
