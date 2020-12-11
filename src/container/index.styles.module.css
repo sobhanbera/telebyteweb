@@ -140,24 +140,146 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: white;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(35px);
+          backdrop-filter: blur(35px);
 }
 
-.loaderWrapper .mainLoader {
+.loaderWrapper .mainLoaderUp {
   width: 100px;
   height: 100px;
   margin: 100px auto;
   background-color: #011627;
   border-radius: 100%;
   animation: sk-scaleout 1s infinite ease-in-out alternate-reverse;
+}
+
+.loaderWrapper .mainLoader {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #011627;
+  color: #011627;
+  -webkit-animation: dotFlashing 1s infinite linear alternate;
+          animation: dotFlashing 1s infinite linear alternate;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.loaderWrapper .mainLoader::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #011627;
+  color: #011627;
+  -webkit-animation: dotFlashing 1s infinite alternate;
+          animation: dotFlashing 1s infinite alternate;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.loaderWrapper .mainLoader::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #011627;
+  color: #011627;
+  -webkit-animation: dotFlashing 1s infinite alternate;
+          animation: dotFlashing 1s infinite alternate;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.loaderWrapper p {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  padding: 10px 5px;
+  margin: 5px 0px;
+}
+
+.loaderWrapper p:after {
+  content: " . . .";
+  -webkit-animation: dotsanim 1500ms steps(5, end) infinite;
+          animation: dotsanim 1500ms steps(5, end) infinite;
+}
+
+@-webkit-keyframes dotFlashing {
+  0% {
+    background-color: #011627;
+  }
+  50%,
+  100% {
+    background-color: #ebe6ff;
+  }
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: #011627;
+  }
+  50%,
+  100% {
+    background-color: #ebe6ff;
+  }
+}
+
+@-webkit-keyframes dotsanim {
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  40% {
+    color: white;
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  60% {
+    text-shadow: 0.25em 0 0 white, 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  80%,
+  100% {
+    text-shadow: 0.25em 0 0 white, 0.5em 0 0 white;
+  }
+}
+
+@keyframes dotsanim {
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  40% {
+    color: white;
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  60% {
+    text-shadow: 0.25em 0 0 white, 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  80%,
+  100% {
+    text-shadow: 0.25em 0 0 white, 0.5em 0 0 white;
+  }
 }
 
 @-webkit-keyframes sk-scaleout {
@@ -555,24 +677,21 @@ body {
   color: #bfbfbf;
 }
 
+.FooterStart .FooterContribute {
+  display: block;
+  width: 60%;
+}
+
 .FooterStart .FooterContribute p {
   padding: 10px 0px 10px 0px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  -webkit-animation-name: bigandsmall;
-          animation-name: bigandsmall;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
   color: white;
+  text-align: center;
 }
 
 .FooterStart .FooterContribute p a {
+  text-align: center;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   color: inherit;
@@ -580,6 +699,23 @@ body {
 
 .FooterStart .FooterContribute p a:hover {
   color: #bfbfbf;
+}
+
+@media (min-width: 1000px) {
+  .FooterStart .FooterContribute p {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-animation-name: bigandsmall;
+            animation-name: bigandsmall;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+  }
 }
 
 @-webkit-keyframes bigandsmall {
@@ -605,6 +741,11 @@ body {
 }
 
 @media screen and (max-width: 774px) {
+  .FooterStart {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
   .FooterStart .MainFooter {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -633,6 +774,9 @@ body {
   }
   .FooterStart .MainFooter .FooterSection ul li:last-child {
     padding-bottom: 2px;
+  }
+  .FooterStart .FooterContribute {
+    width: 100%;
   }
 }
 
@@ -1317,25 +1461,26 @@ body {
   margin-right: 10px;
   width: 30px;
   height: 30px;
-}
-
-.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.GithubIcon {
   fill: black;
 }
 
-.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.LinkedinIcon {
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.GithubIcon:hover, .FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.GithubIcon:active {
+  fill: #6e5494;
+}
+
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.LinkedinIcon:hover, .FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.LinkedinIcon:active {
   fill: #0e76a8;
 }
 
-.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.InstagramIcon {
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.InstagramIcon:hover, .FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.InstagramIcon:active {
   fill: #cd486b;
 }
 
-.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.FacebookIcon {
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.FacebookIcon:hover, .FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.FacebookIcon:active {
   fill: #3b5998;
 }
 
-.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.TwitterIcon {
+.FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.TwitterIcon:hover, .FullProfile .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.TwitterIcon:active {
   fill: #00acee;
 }
 
@@ -1415,6 +1560,93 @@ body {
 
 .FullProfile .ProfileCard .ProfileCardRight .ProfileEducationSection .ProfileEducationCard span {
   padding: 5px 0px 10px 6px;
+}
+
+.DisplayNone {
+  display: none;
+  opacity: 0;
+}
+
+.ProfileIsLight .ProfileCard {
+  border: 1px solid #000000;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileImage img {
+  border: 1px solid #000000;
+}
+
+.ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg {
+  fill: #bfbfbf;
+}
+
+.ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.GithubIcon:hover, .ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.GithubIcon:active {
+  fill: #6e5494;
+}
+
+.ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.LinkedinIcon:hover, .ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.LinkedinIcon:active {
+  fill: #0e76a8;
+}
+
+.ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.InstagramIcon:hover, .ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.InstagramIcon:active {
+  fill: #cd486b;
+}
+
+.ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.FacebookIcon:hover, .ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.FacebookIcon:active {
+  fill: #3b5998;
+}
+
+.ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.TwitterIcon:hover, .ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileSocial a svg.TwitterIcon:active {
+  fill: #00acee;
+}
+
+.ProfileIsLight .ProfileCard .centerThisPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.ProfileIsLight .ProfileCard .centerThisPart .ProfileCardLeftHRLine {
+  width: 95%;
+  border-top: 1px solid #000000;
+}
+
+.ProfileIsDark .ProfileCard {
+  border: 1px solid #bfbfbf;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.ProfileIsDark .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileImage img {
+  border: 1px solid #bfbfbf;
+}
+
+.ProfileIsDark .ProfileCard .centerThisPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.ProfileIsDark .ProfileCard .centerThisPart .ProfileCardLeftHRLine {
+  width: 95%;
+  border-top: 1px solid #bfbfbf;
 }
 
 @media (max-width: 1700px) {
@@ -1514,69 +1746,6 @@ body {
     -webkit-filter: blur(0) grayscale(0);
             filter: blur(0) grayscale(0);
   }
-}
-
-.DisplayNone {
-  display: none;
-  opacity: 0;
-}
-
-.ProfileIsLight .ProfileCard {
-  border: 1px solid #202020;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.ProfileIsLight .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileImage img {
-  border: 1px solid #202020;
-}
-
-.ProfileIsLight .ProfileCard .centerThisPart {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.ProfileIsLight .ProfileCard .centerThisPart .ProfileCardLeftHRLine {
-  width: 95%;
-  border-top: 1px solid #202020;
-}
-
-.ProfileIsDark .ProfileCard {
-  border: 1px solid #bfbfbf;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-.ProfileIsDark .ProfileCard .ProfileCardLeft .ProfileCardLeftFlex .ProfileImage img {
-  border: 1px solid #bfbfbf;
-}
-
-.ProfileIsDark .ProfileCard .centerThisPart {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.ProfileIsDark .ProfileCard .centerThisPart .ProfileCardLeftHRLine {
-  width: 95%;
-  border-top: 1px solid #bfbfbf;
 }
 
 .ErrorSectionStart {
@@ -1897,7 +2066,7 @@ body {
   font-size: 15px;
   padding: 8px 5px;
   color: #444444;
-  background-color: #f9f9f9;
+  background-color: #f6f6f6;
   border-radius: 0 0 5px 5px;
   border-top: 1px solid #cfcfcf;
 }
@@ -2015,14 +2184,20 @@ body {
   margin-right: 10px;
 }
 
-.LightDarkButton:hover, .LightDarkButton:active {
-  color: #011627;
-  background-color: transparent;
-}
-
 .LightDarkButton.topbottom {
   margin-top: 15px;
   margin-bottom: 10px;
+}
+
+.LightDarkButton.DangerButton:hover, .LightDarkButton.DangerButton:active {
+  color: #ffffff;
+  border: 1px solid #ff4040;
+  background-color: #ef4040;
+}
+
+.LightDarkButton:hover, .LightDarkButton:active {
+  color: #011627;
+  background-color: transparent;
 }
 
 @media (max-width: 1100px) {
@@ -2095,5 +2270,91 @@ body {
     max-width: 100px;
     margin: 5px 10px;
   }
+}
+
+.AboutSectionStart {
+  min-width: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Inter", sans-serif;
+}
+
+.AboutSectionStart .MainAboutSection {
+  margin-top: 30px;
+  width: 1100px;
+  border-radius: 6px 6px 0 0;
+}
+
+.AboutSectionStart .MainAboutSection .MainKeymapSection {
+  width: 100%;
+}
+
+.AboutSectionStart .MainAboutSection .MainKeymapSection .DisplaySection {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 6px 6px 0 0;
+  padding: 6px 8px;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.AboutSectionStart .MainAboutSection .MainKeymapSection .MainKeymaps {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.AboutSectionStart .MainAboutSection .MainKeymapSection .MainKeymaps .Keymap {
+  padding: 12px 10px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.AboutSectionStart .MainAboutSection .MainKeymapSection .MainKeymaps .Keymap.Shaded {
+  background-color: #f6f6f6;
 }
 /*# sourceMappingURL=index.styles.module.css.map */

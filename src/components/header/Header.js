@@ -5,6 +5,13 @@ import styles from "../elements/styles/style";
 function Header(props) {
 	const [showMenu, setShowMenu] = useState(false);
 
+	window.addEventListener("keydown", (event) => {
+		if ((event.key === "M" || event.key === "m") && event.altKey) {
+			const currVal = showMenu;
+			setShowMenu(!currVal);
+		}
+	});
+
 	return (
 		<>
 			<header className={styles.HeaderStart}>

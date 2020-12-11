@@ -10,6 +10,7 @@ import SettingCard, {
 	PasswordReset,
 	PhoneNumberCard,
 	SocialLinks,
+	DeleteAccount,
 } from "./settingCards/SettingCard";
 import {
 	boyAvatar,
@@ -335,6 +336,28 @@ const Setting = (props) => {
 		return true;
 	}
 
+	const deleteUserAccount = () => {
+		const date = new Date();
+		const perfectTime =
+			date.getSeconds() + date.getMinutes() + date.getHours();
+		console.log(perfectTime);
+		if (
+			window.confirm("Are you sure to delete your account permanently.")
+		) {
+			firebase
+				.database()
+				.ref("DeleteAccount")
+				.child(username)
+				.child(perfectTime)
+				.update({
+					email: temail,
+				});
+			alert(
+				"you will recieve a confirmation email follow that to delete the account. Thanks for using TeleByte."
+			);
+		}
+	};
+
 	return (
 		<div className={styles.SettingSectionStart}>
 			<div className={styles.SettingArea}>
@@ -380,6 +403,16 @@ const Setting = (props) => {
 
 					<h4>
 						<a href="#sociallinks">Social Links</a>
+					</h4>
+
+					{verified ? null : (
+						<h4>
+							<a href="#verifyemail">Verify Email</a>
+						</h4>
+					)}
+
+					<h4>
+						<a href="#resetpassword">Reset Password</a>
 					</h4>
 				</div>
 				<div className={styles.SettingMainWorkingArea}>
@@ -572,6 +605,13 @@ const Setting = (props) => {
 						required="Tap the above button to send password reset email."
 						sendPasswordResetEmail={sendPasswordResetEmail}
 					/>
+
+					<DeleteAccount
+						heading="Delete Account"
+						what="Delete your account permanently. Your data will be lost."
+						required="Advice: If not sure go away from the above button."
+						deleteUserAccount={deleteUserAccount}
+					/>
 				</div>
 			</div>
 			<div className={styles.SettingSubmitSection}>
@@ -590,3 +630,4 @@ export default Setting;
 // props.placeholder;
 // props.id;
 // props.required;
+// 9932958436

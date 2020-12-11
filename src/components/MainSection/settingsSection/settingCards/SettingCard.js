@@ -3,7 +3,7 @@ import styles from "../../../elements/styles/style";
 
 const SettingCard = (props) => {
 	return (
-		<div className={styles.SettingCard}>
+		<div className={styles.SettingCard} id={props.id}>
 			<div className={styles.CardTop}>
 				<h4>{props.heading}</h4>
 				<p>{props.what}</p>
@@ -23,7 +23,6 @@ const SettingCard = (props) => {
 							autoComplete="off"
 							minLength={props.min}
 							maxLength={props.max}
-							id={props.id}
 						/>
 						<span>
 							{props.length}
@@ -40,7 +39,6 @@ const SettingCard = (props) => {
 						autoComplete="on"
 						minLength={props.min}
 						maxLength={props.max}
-						id={props.id}
 					/>
 				)}
 			</div>
@@ -54,7 +52,7 @@ const SettingCard = (props) => {
 
 const PhoneNumberCard = (props) => {
 	return (
-		<div className={styles.SettingCard}>
+		<div className={styles.SettingCard} id={props.id}>
 			<div className={styles.CardTop}>
 				<h4>{props.heading}</h4>
 				<p>{props.what}</p>
@@ -67,7 +65,6 @@ const PhoneNumberCard = (props) => {
 					autoComplete="on"
 					minLength={props.min}
 					maxLength={props.max}
-					id={props.id}
 				/>
 				<button
 					className={`${styles.LightDarkButton} ${styles.topbottom} `}
@@ -87,7 +84,7 @@ const PhoneNumberCard = (props) => {
 const EmailNotVeified = (props) => {
 	return (
 		<div className={styles.SettingCard}>
-			<div className={styles.CardTop}>
+			<div className={styles.CardTop} id="verifyemail">
 				<h4>{props.heading}</h4>
 				<p>{props.what}</p>
 				<button
@@ -107,7 +104,7 @@ const EmailNotVeified = (props) => {
 
 const PasswordReset = (props) => {
 	return (
-		<div className={styles.SettingCard}>
+		<div className={styles.SettingCard} id="resetpassword">
 			<div className={styles.CardTop}>
 				<h4>{props.heading}</h4>
 				<p>{props.what}</p>
@@ -128,7 +125,7 @@ const PasswordReset = (props) => {
 
 const ColorPicker = (props) => {
 	return (
-		<div className={styles.SettingCard}>
+		<div className={styles.SettingCard} id={props.id}>
 			<div className={styles.CardTop}>
 				<h4>{props.heading}</h4>
 				<p>{props.what}</p>
@@ -139,7 +136,6 @@ const ColorPicker = (props) => {
 					type="color"
 					value={props.value}
 					onChange={(event) => props.onChange(event)}
-					id={props.id}
 				/>
 				<p>Color Score: {props.score}</p>
 			</div>
@@ -255,7 +251,7 @@ const Education = (props) => {
 	};
 
 	return (
-		<div className={styles.SettingCard}>
+		<div className={styles.SettingCard} id="education">
 			<div className={styles.CardTop}>
 				<h4>{props.heading}</h4>
 			</div>
@@ -375,7 +371,7 @@ const ImagePicker = (props) => {
 
 const SocialLinks = (props) => {
 	return (
-		<div className={styles.SettingCard}>
+		<div className={styles.SettingCard} id="sociallinks">
 			<div className={styles.CardTop}>
 				<h4>{props.heading}</h4>
 				<p>{props.what}</p>
@@ -437,6 +433,27 @@ const SocialLinks = (props) => {
 	);
 };
 
+const DeleteAccount = (props) => {
+	return (
+		<div className={styles.SettingCard} id="deleteaccount">
+			<div className={styles.CardTop}>
+				<h4>{props.heading}</h4>
+				<p>{props.what}</p>
+				<button
+					className={`${styles.LightDarkButton} ${styles.topbottom} ${styles.DangerButton}`}
+					onClick={props.deleteUserAccount}
+				>
+					Delete Account
+				</button>
+			</div>
+
+			<div className={styles.CardBottom}>
+				<span>{props.required}</span>
+			</div>
+		</div>
+	);
+};
+
 export default SettingCard;
 export {
 	PhoneNumberCard,
@@ -446,4 +463,5 @@ export {
 	ImagePicker,
 	SocialLinks,
 	Education,
+	DeleteAccount,
 };
