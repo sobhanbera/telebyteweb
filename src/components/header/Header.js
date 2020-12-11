@@ -5,17 +5,12 @@ import styles from "../elements/styles/style";
 function Header(props) {
 	const [showMenu, setShowMenu] = useState(false);
 
-	window.addEventListener("keydown", event => {
-		if(event.code === "Escape") {
-			if(showMenu) {
-				setShowMenu(false);
-			}
-		}else if(event.key === "e") {
-			if(!showMenu) {
-				setShowMenu(true);
-			}
+	window.addEventListener("keydown", (event) => {
+		if ((event.key === "M" || event.key === "m") && event.altKey) {
+			const currVal = showMenu;
+			setShowMenu(!currVal);
 		}
-	})
+	});
 
 	return (
 		<>
