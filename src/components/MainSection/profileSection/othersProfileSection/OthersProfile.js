@@ -11,14 +11,29 @@ const Expertise = (props) => {
 	let componentList = null;
 
 	if (props.expertise) {
-		list = props.expertise.split("|").sort();
-		const expertise = list.sort((a, b) => {
-			return a.length - b.length;
-		});
-		componentList = expertise.map((single) => {
+		// list = props.expertise.split(",").sort();
+		// const expertise = list.sort((a, b) => {
+		// 	return a.length - b.length;
+		// });
+		// componentList = expertise.map((single) => {
+		// 	return (
+		// 		<span
+		// 			className={styles.ProfileCardRightExpertiseSpan}
+		// 			key={id++}
+		// 		>
+		// 			{single}
+		// 		</span>
+		// 	);
+		// });
+		list = props.expertise.split(",");
+		componentList = list.map((single) => {
 			return (
 				<span
-					className={styles.ProfileCardRightExpertiseSpan}
+					className={
+						single
+							? styles.ProfileCardRightExpertiseSpan
+							: styles.DisplayNone
+					}
 					key={id++}
 				>
 					{single}
@@ -213,6 +228,12 @@ class OthersProfile extends Component {
 						userdata: response.data,
 						showLoading: false,
 					});
+
+					if (this.state.userdata.username) {
+						document.title = this.state.userdata.username;
+					} else {
+						document.title = "Profile";
+					}
 				} else {
 					this.setState({
 						notFound: true,

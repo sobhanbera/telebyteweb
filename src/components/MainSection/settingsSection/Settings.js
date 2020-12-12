@@ -358,6 +358,12 @@ const Setting = (props) => {
 		}
 	};
 
+	if (username) {
+		document.title = username + " Settings";
+	} else {
+		document.title = "Settings";
+	}
+
 	return (
 		<div className={styles.SettingSectionStart}>
 			<div className={styles.SettingArea}>

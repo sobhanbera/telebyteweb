@@ -228,6 +228,12 @@ const Profile = (props) => {
 		}
 	}
 
+	if (username) {
+		document.title = username;
+	} else {
+		document.title = "Profile";
+	}
+
 	return (
 		<div
 			className={`${styles.FullProfile} ${
