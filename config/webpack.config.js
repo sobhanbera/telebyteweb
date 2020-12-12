@@ -495,7 +495,7 @@ module.exports = function (webpackEnv) {
 									: isEnvDevelopment,
 								modules: {
 									localIdentName:
-										process.env.NODE_ENV === "production"
+										process.env.NODE_ENV !== "devlopment"
 											? "[hash:base64]sbtb"
 											: "[name]-[path][local]",
 								},
