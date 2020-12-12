@@ -165,11 +165,12 @@ module.exports = function (webpackEnv) {
 			: isEnvDevelopment && "development",
 		// Stop compilation early in production
 		bail: isEnvProduction,
-		devtool: isEnvProduction
-			? shouldUseSourceMap
-				? "source-map"
-				: false
-			: isEnvDevelopment && "cheap-module-source-map",
+		devtool: false,
+		// devtool: isEnvProduction
+		// ? shouldUseSourceMap
+		// 	? "source-map"
+		// 	: false
+		// : isEnvDevelopment && "cheap-module-source-map",
 		// These are the "entry points" to our application.
 		// This means they will be the "root" imports that are included in JS bundle.
 		entry:
@@ -486,7 +487,7 @@ module.exports = function (webpackEnv) {
 						// By default we support CSS Modules with the extension .module.css
 						{
 							test: cssRegex,
-							exclude: cssModuleRegex,
+							include: cssModuleRegex,
 							use: getStyleLoaders({
 								importLoaders: 1,
 								sourceMap: isEnvProduction
@@ -495,7 +496,7 @@ module.exports = function (webpackEnv) {
 								modules: {
 									localIdentName:
 										env.NODE_ENV === "production"
-											? "[hash:base64]-sbtb"
+											? "[hash:base64]sbtb"
 											: "[name]-[path][local]",
 								},
 							}),
