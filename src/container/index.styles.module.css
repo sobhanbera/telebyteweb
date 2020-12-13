@@ -67,7 +67,7 @@ body {
 }
 
 .editText:hover, .editText:active, .editText:focus {
-  border-bottom: 2px solid #011627;
+  border-bottom: 2px solid #0f60b6;
 }
 
 .primaryButton {
@@ -159,7 +159,7 @@ body {
   width: 100px;
   height: 100px;
   margin: 100px auto;
-  background-color: #011627;
+  background-color: #0f60b6;
   border-radius: 100%;
   animation: sk-scaleout 1s infinite ease-in-out alternate-reverse;
 }
@@ -169,8 +169,8 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #011627;
-  color: #011627;
+  background-color: #0f60b6;
+  color: #0f60b6;
   -webkit-animation: dotFlashing 1s infinite linear alternate;
           animation: dotFlashing 1s infinite linear alternate;
   -webkit-animation-delay: 0.5s;
@@ -186,8 +186,8 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #011627;
-  color: #011627;
+  background-color: #0f60b6;
+  color: #0f60b6;
   -webkit-animation: dotFlashing 1s infinite alternate;
           animation: dotFlashing 1s infinite alternate;
   -webkit-animation-delay: 0s;
@@ -203,8 +203,8 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #011627;
-  color: #011627;
+  background-color: #0f60b6;
+  color: #0f60b6;
   -webkit-animation: dotFlashing 1s infinite alternate;
           animation: dotFlashing 1s infinite alternate;
   -webkit-animation-delay: 1s;
@@ -226,7 +226,7 @@ body {
 
 @-webkit-keyframes dotFlashing {
   0% {
-    background-color: #011627;
+    background-color: #0f60b6;
   }
   50%,
   100% {
@@ -236,7 +236,7 @@ body {
 
 @keyframes dotFlashing {
   0% {
-    background-color: #011627;
+    background-color: #0f60b6;
   }
   50%,
   100% {
@@ -478,7 +478,7 @@ body {
 }
 
 .HeaderStart {
-  background-color: #011627;
+  background-color: #0f60b6;
   width: 100%;
   height: 60px;
 }
@@ -486,7 +486,7 @@ body {
 .HeaderStart .MainHeader {
   width: 100%;
   height: 100%;
-  background-color: #011627;
+  background-color: #0f60b6;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -506,14 +506,14 @@ body {
 
 .HeaderStart .MainHeader svg {
   cursor: pointer;
-  height: 35px;
+  height: 32px;
   width: auto;
   fill: white;
 }
 
 .HeaderStart .MainHeader .HeaderMenuIcon {
   margin-left: 20px;
-  width: 35px;
+  width: 32px;
   padding: 6px;
 }
 
@@ -523,6 +523,7 @@ body {
 }
 
 .HeaderStart .MainHeader .TBLogo {
+  margin-left: 20px;
   height: 32px;
 }
 
@@ -539,7 +540,7 @@ body {
   -webkit-transition: top 0.5s;
   transition: top 0.5s;
   width: 100%;
-  background-color: #011627;
+  background-color: #0f60b6;
 }
 
 .HeaderMenu ul li {
@@ -547,7 +548,7 @@ body {
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
-  background-color: #011627;
+  background-color: #0f60b6;
 }
 
 .HeaderMenu ul li a {
@@ -582,12 +583,12 @@ body {
 }
 
 .HeaderMenu ul li:hover {
-  background-color: #091e2f;
+  background-color: #0859ae;
   color: #efefef;
 }
 
 .HeaderMenu ul li:active {
-  background-color: #112635;
+  background-color: #0051a7;
   color: #cfcfcf;
 }
 
@@ -595,10 +596,22 @@ body {
   display: block;
 }
 
+@media (max-width: 800px) {
+  .HeaderStart {
+    height: 45px;
+  }
+  .HeaderStart .MainHeader svg {
+    height: 31px;
+  }
+  .HeaderStart .MainHeader .TBLogo {
+    height: 28px;
+  }
+}
+
 .FooterStart {
   width: 100%;
   min-height: 150px;
-  background-color: #011627;
+  background-color: #0f60b6;
   color: white;
   padding: 15px;
   display: -webkit-box;
@@ -896,7 +909,7 @@ body {
   -webkit-box-flex: 1.5;
       -ms-flex-positive: 1.5;
           flex-grow: 1.5;
-  color: #011627;
+  color: #0f60b6;
   background-color: white;
 }
 
@@ -1525,7 +1538,7 @@ body {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  background-color: #112635;
+  background-color: #0051a7;
   color: white;
   padding: 6px 12px;
   border-radius: 4px;
@@ -1748,6 +1761,473 @@ body {
   }
 }
 
+.MainStandardProfileStart {
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.MainStandardProfileStart .StandardProfileArea {
+  width: 1150px;
+  background-color: transparent;
+  border-radius: 5px;
+  margin: 55px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart {
+  width: 33%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #dadada;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .ProfileImageContainer {
+  max-height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .ProfileImageContainer img {
+  width: 135px;
+  height: 135px;
+  border: 1px solid #0f60b6;
+  border-radius: 50%;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .TextSection {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .TextSection p {
+  font-size: 17px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .TextSection p.FullName {
+  font-size: 20px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .FollowStarts {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .FollowStarts .FollowersDiv,
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .FollowStarts .FollowingsDiv {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 4;
+      -ms-flex-positive: 4;
+          flex-grow: 4;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #b9b9b9;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .FollowStarts .FollowersDiv h3,
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .FollowStarts .FollowersDiv p,
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .FollowStarts .FollowingsDiv h3,
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .FollowStarts .FollowingsDiv p {
+  padding: 5px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .FollowStarts .FollowersDiv {
+  border-right: 1px solid #b9b9b9;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .JoinedONDiv {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 4;
+      -ms-flex-positive: 4;
+          flex-grow: 4;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #b9b9b9;
+  border-top: 1px solid #b9b9b9;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .JoinedONDiv h3,
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .JoinedONDiv p {
+  padding: 5px;
+  margin: 2px 0;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .Status {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #b9b9b9;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .Status h4 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 17px;
+  padding: 5px;
+  margin: 2px 0;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .Status p {
+  text-align: center;
+  padding: 5px;
+  margin: 0 8px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .SocialButtons {
+  margin: 10px 0;
+  padding: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .SocialButtons a {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: block;
+  width: 150px;
+  text-align: center;
+  padding: 8px 11px;
+  margin: 6px 5px;
+  border-radius: 5px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .SocialButtons a.MailBTN {
+  color: black;
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 1800% 1800%;
+  -webkit-animation: rainbow 10s ease infinite;
+  -z-animation: rainbow 10s ease infinite;
+  animation: rainbow 10s ease infinite;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .SocialButtons a.MailBTN:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .SocialButtons a.GithubBTN {
+  background-color: #202022;
+  border: 1px solid #202022;
+  color: white;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .SocialButtons a.DribbleBTN {
+  background-color: #ea4c89;
+  border: 1px solid #ea4c89;
+  color: white;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .SocialButtons a.LinkedinBTN {
+  background-color: #0e76a8;
+  border: 1px solid #0e76a8;
+  color: white;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .SocialButtons a.InstaBTN {
+  background-color: #bc2a8d;
+  border: 1px solid #8a3ab9;
+  color: white;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .SocialButtons a.FacebookBTN {
+  background-color: #3b5998;
+  border: 1px solid #3b5998;
+  color: white;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .SocialButtons a.TwitterBTN {
+  background-color: #00acee;
+  border: 1px solid #00acee;
+  color: white;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .SocialButtons a:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart {
+  width: 60%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 6px;
+  border: 1px solid #dadada;
+  background-color: #ffffff;
+  padding: 5px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1px solid #b9b9b9;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText h4 {
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 5px 6px;
+  text-align: center;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText p {
+  padding: 5px 15px;
+  text-align: start;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText p:first-child {
+  margin-top: 10px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText p:last-child {
+  margin-bottom: 10px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileEducationSection {
+  margin: 0 5px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1px solid #b9b9b9;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileEducationSection h4 {
+  margin-top: 12px;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 5px 6px;
+  text-align: center;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileEducationSection span {
+  text-align: center;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileEducationSection .ProfileEducationCard {
+  padding: 6px 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #cfcfcf;
+  -webkit-box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileEducationSection .ProfileEducationCard h5 {
+  font-size: 16px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileEducationSection .ProfileEducationCard span {
+  font-size: 16px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileCardRightExpertise {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileCardRightExpertise h4 {
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 5px 6px;
+  text-align: center;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileCardRightExpertise .ExpertiseContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileCardRightExpertise .ExpertiseContainer .ProfileCardRightExpertiseSpan {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #0051a7;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-align: center;
+  margin: 3px 7px;
+}
+
+@media (max-width: 1200px) {
+  .MainStandardProfileStart .StandardProfileArea {
+    width: 1000px;
+    border-radius: 0;
+  }
+  .MainStandardProfileStart .StandardProfileArea .LeftOrTopPart {
+    width: 350px;
+  }
+  .MainStandardProfileStart .StandardProfileArea .RightOrBottomPart {
+    width: 640px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .MainStandardProfileStart .StandardProfileArea {
+    width: 90%;
+    border-radius: 0;
+  }
+  .MainStandardProfileStart .StandardProfileArea .LeftOrTopPart {
+    width: 40%;
+  }
+  .MainStandardProfileStart .StandardProfileArea .RightOrBottomPart {
+    width: 60%;
+  }
+}
+
+@media (max-width: 800px) {
+  .MainStandardProfileStart .StandardProfileArea {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 98%;
+    border-radius: 0;
+  }
+  .MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileCardRightExpertise .ExpertiseContainer .ProfileCardRightExpertiseSpan {
+    margin: 2px 4px;
+  }
+}
+
+@media (max-width: 650px) {
+  .MainStandardProfileStart .StandardProfileArea {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .MainStandardProfileStart .StandardProfileArea .LeftOrTopPart,
+  .MainStandardProfileStart .StandardProfileArea .RightOrBottomPart {
+    border-radius: 0;
+    width: 100%;
+    border: none;
+  }
+  .MainStandardProfileStart .StandardProfileArea .LeftOrTopPart {
+    border-bottom: 1px solid #b0b0b0;
+  }
+}
+
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+
 .ErrorSectionStart {
   width: 100%;
   min-height: 60vh;
@@ -1850,9 +2330,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -1973,11 +2453,22 @@ body {
 }
 
 .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input:hover, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input:active, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input:focus {
-  border: 1px solid #202020;
+  border: 1px solid #0f60b6;
 }
 
 .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input.Disabled:hover, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input.Disabled:active, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input.Disabled:focus {
   border: 1px solid red;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input.Checkbox {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 10px;
+  -webkit-appearance: checkbox;
+     -moz-appearance: checkbox;
+          appearance: checkbox;
 }
 
 .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea {
@@ -2004,7 +2495,7 @@ body {
 }
 
 .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea:hover, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea:active, .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea:focus {
-  border: 1px solid #202020;
+  border: 1px solid #0f60b6;
 }
 
 .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea.ShortHeightTextarea {
@@ -2145,9 +2636,9 @@ body {
 
 .SettingSectionStart .SettingSubmitSection button {
   cursor: pointer;
-  border: 1px solid #011627;
+  border: 1px solid #0f60b6;
   border-radius: 4px;
-  background-color: #011627;
+  background-color: #0f60b6;
   color: white;
   padding: 9px 20px;
   min-width: 100px;
@@ -2161,15 +2652,15 @@ body {
 }
 
 .SettingSectionStart .SettingSubmitSection button:hover, .SettingSectionStart .SettingSubmitSection button:active {
-  color: #011627;
+  color: #0f60b6;
   background-color: transparent;
 }
 
 .LightDarkButton {
   cursor: pointer;
-  border: 1px solid #011627;
+  border: 1px solid #0f60b6;
   border-radius: 4px;
-  background-color: #011627;
+  background-color: #0f60b6;
   color: white;
   padding: 9px;
   min-width: 100px;
@@ -2196,7 +2687,7 @@ body {
 }
 
 .LightDarkButton:hover, .LightDarkButton:active {
-  color: #011627;
+  color: #0f60b6;
   background-color: transparent;
 }
 
