@@ -63,14 +63,14 @@ const PhoneNumberCard = (props) => {
 					onChange={(event) => props.onChange(event)}
 					placeholder={props.placeholder}
 					autoComplete="on"
-					minLength={props.min}
-					maxLength={props.max}
+					minLength="10"
+					maxLength="10"
 				/>
 				<button
 					className={`${styles.LightDarkButton} ${styles.topbottom} `}
 					onClick={props.updatePhoneNumber}
 				>
-					Verify
+					Save
 				</button>
 			</div>
 
@@ -239,7 +239,7 @@ const Education = (props) => {
 			degree: degree,
 			school: school,
 			yearFrom: fromy,
-			yearTo: toy ? toy : "Moment",
+			yearTo: toy ? toy : "Present",
 		};
 
 		if (props.addIntoList(data)) {
@@ -332,6 +332,28 @@ const Education = (props) => {
 	);
 };
 
+const ProfileTypeCard = (props) => {
+	return (
+		<div className={styles.SettingCard} id="profiletype">
+			<div className={styles.CardTop}>
+				<h4>{props.heading}</h4>
+				<p>{props.what}</p>
+				<input
+					className={styles.Checkbox}
+					type="checkbox"
+					checked={props.value}
+					onChange={props.onChange}
+				/>
+				<span>{props.label}</span>
+			</div>
+
+			<div className={styles.CardBottom}>
+				<span>{props.required}</span>
+			</div>
+		</div>
+	);
+};
+
 const ImagePicker = (props) => {
 	return (
 		<div className={styles.SettingCard}>
@@ -395,6 +417,16 @@ const SocialLinks = (props) => {
 					/>
 				</div>
 				<div className={styles.InputArea}>
+					<span>Dribbble</span>
+
+					<input
+						type="url"
+						value={props.dvalue}
+						onChange={(event) => props.onChangeD(event)}
+						placeholder="https://dribbble.com/{username}"
+					/>
+				</div>
+				<div className={styles.InputArea}>
 					<span>Facebook</span>
 
 					<input
@@ -433,6 +465,27 @@ const SocialLinks = (props) => {
 	);
 };
 
+const SignOutSettingCard = (props) => {
+	return (
+		<div className={styles.SettingCard} id="deleteaccount">
+			<div className={styles.CardTop}>
+				<h4>{props.heading}</h4>
+				<p>{props.what}</p>
+				<button
+					className={`${styles.LightDarkButton} ${styles.topbottom} ${styles.DangerButton}`}
+					onClick={props.signOutUser}
+				>
+					Sign Out
+				</button>
+			</div>
+
+			<div className={styles.CardBottom}>
+				<span>{props.required}</span>
+			</div>
+		</div>
+	);
+};
+
 const DeleteAccount = (props) => {
 	return (
 		<div className={styles.SettingCard} id="deleteaccount">
@@ -460,8 +513,10 @@ export {
 	EmailNotVeified,
 	PasswordReset,
 	ColorPicker,
+	ProfileTypeCard,
 	ImagePicker,
 	SocialLinks,
+	SignOutSettingCard,
 	Education,
 	DeleteAccount,
 };

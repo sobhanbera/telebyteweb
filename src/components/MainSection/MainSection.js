@@ -6,7 +6,7 @@ import Dashboard from "./dashboardSection/Dashboard";
 import Explore from "./exploreSection/Explore";
 import Tools from "./toolsSection/Tools";
 import Setting from "./settingsSection/Settings";
-import Profile from "./profileSection/Profile";
+import Profile from "./profileSection/decoProfile/Profile";
 import OthersProfile from "./profileSection/othersProfileSection/OthersProfile";
 import Support from "./supportSection/Support";
 import About from "./aboutSection/About";
