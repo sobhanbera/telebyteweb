@@ -119,11 +119,31 @@ class Main extends React.Component {
 	};
 
 	componentDidMount() {
-		console.log("process.env.NODE_ENV", process.env.NODE_ENV); // expected 'staging' to be printed here when running `npm run staging`
-		console.log("process.env.BUILD_VERSION", process.env.BUILD_VERSION); // '1.0.0'
+		// console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+		// console.log("process.env.BUILD_VERSION", process.env.BUILD_VERSION);
 		this.setState({
 			showLoading: false,
 		});
+
+		// firebase
+		// 	.database()
+		// 	.ref("Telebyte")
+		// 	.child("authentication_settings")
+		// 	.set({
+		// 		regOpen: false,
+		// 	});
+
+		// if(this.state.showLoading) {
+		// const show = setInterval(() => {
+		// 	setTimeout(() => {
+		// 		if (this.state.showLoading) {
+		// 			alert("Internet issues found.");
+		// 		} else {
+		// 			clearInterval(show);
+		// 		}
+		// 	}, 9000);
+		// }, 1000);
+		// }
 
 		this.reloadUserAuthFuntion();
 	}
