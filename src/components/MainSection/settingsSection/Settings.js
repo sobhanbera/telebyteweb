@@ -10,7 +10,9 @@ import SettingCard, {
 	PasswordReset,
 	PhoneNumberCard,
 	SocialLinks,
+	SignOutSettingCard,
 	DeleteAccount,
+	ProfileTypeCard,
 } from "./settingCards/SettingCard";
 import {
 	boyAvatar,
@@ -61,6 +63,7 @@ const Setting = (props) => {
 		location,
 		phoneNo,
 		profileImg,
+		profileType,
 		social,
 		status,
 		username,
@@ -72,10 +75,11 @@ const Setting = (props) => {
 			return item;
 		});
 	}
-	let facebook, instagram, github, linkedin, twitter;
+	let facebook, instagram, github, linkedin, dribbble, twitter;
 	if (social) {
 		github = social.github;
 		linkedin = social.linkedin;
+		dribbble = social.dribbble;
 		facebook = social.facebook;
 		instagram = social.instagram;
 		twitter = social.twitter;
@@ -90,11 +94,13 @@ const Setting = (props) => {
 	const [teducation, setEducation] = useState(education);
 	const [texpertise, setExpertise] = useState(finalexpertise);
 	const [tlocation, setLocation] = useState(location);
+	const [tprofileType, setProfileType] = useState(profileType);
 	const [tprofileImg, setProfileImg] = useState(profileImg);
 	const [tfacolor, setFacolor] = useState(facolor);
 
 	const [tgithub, setGithub] = useState(github);
 	const [tlinkedin, setLinkedin] = useState(linkedin);
+	const [tdribbble, setDribble] = useState(dribbble);
 	const [tfacebook, setFacebook] = useState(facebook);
 	const [tinstagram, setInstagram] = useState(instagram);
 	const [ttwitter, setTwitter] = useState(twitter);
@@ -107,7 +113,7 @@ const Setting = (props) => {
 				clearInterval(timer);
 			}
 		}, 1000);
-	}, []);
+	}, [props.currentUser]);
 
 	useEffect(() => {
 		const timers = setInterval(() => {
@@ -125,7 +131,7 @@ const Setting = (props) => {
 				clearInterval(timers);
 			}
 		}, 1000);
-	}, []);
+	}, [expertise]);
 
 	// const [tpublics, setPublics] = useState(publics);
 	// email: temail,
@@ -245,10 +251,12 @@ const Setting = (props) => {
 				expertise: finalExpertise,
 				location: tlocation,
 				profileImg: tprofileImg,
+				profileType: tprofileType,
 				facolor: tfacolor,
 				social: {
 					github: tgithub,
 					linkedin: tlinkedin,
+					dribbble: tdribbble,
 					facebook: tfacebook,
 					instagram: tinstagram,
 					twitter: ttwitter,
@@ -339,8 +347,13 @@ const Setting = (props) => {
 	const deleteUserAccount = () => {
 		const date = new Date();
 		const perfectTime =
-			date.getSeconds() + date.getMinutes() + date.getHours();
-		console.log(perfectTime);
+			date.getHours() +
+			":" +
+			date.getMinutes() +
+			":" +
+			date.getSeconds() +
+			":" +
+			date.getMilliseconds();
 		if (
 			window.confirm("Are you sure to delete your account permanently.")
 		) {
@@ -374,39 +387,33 @@ const Setting = (props) => {
 					<h4>
 						<a href="#fullname">Fullname</a>
 					</h4>
-
 					<h4>
 						<a href="#phone">Phone</a>
 					</h4>
-
 					<h4>
 						<a href="#status">Status</a>
 					</h4>
-
 					<h4>
 						<a href="#about">About</a>
 					</h4>
-
 					<h4>
 						<a href="#location">Location</a>
 					</h4>
-
 					<h4>
 						<a href="#education">Education</a>
 					</h4>
-
 					<h4>
 						<a href="#expertise">Expertise</a>
 					</h4>
-
+					<h4>
+						<a href="#profiletype">Profile Type</a>
+					</h4>
 					<h4>
 						<a href="#profiletavatar">Profile Avatar</a>
 					</h4>
-
 					<h4>
 						<a href="#color">Color</a>
 					</h4>
-
 					<h4>
 						<a href="#sociallinks">Social Links</a>
 					</h4>
@@ -469,8 +476,8 @@ const Setting = (props) => {
 						placeholder="Phone"
 						id="phone"
 						disabled={false}
-						min="10"
-						max="10"
+						// min="10"
+						// max="10"
 						type="number"
 						required="Totally Optional."
 						updatePhoneNumber={updatePhoneNumber}
@@ -502,7 +509,7 @@ const Setting = (props) => {
 						id="about"
 						disabled={false}
 						min="100"
-						max="500"
+						max="1000"
 						length={tabout ? tabout.length : "0"}
 						type="text"
 						required="Please use 100 - 500 characters at max."
@@ -547,6 +554,22 @@ const Setting = (props) => {
 						required="Please use 50 characters at max."
 					/>
 
+					<ProfileTypeCard
+						heading="Choose Profile Type"
+						what="There are 2 types of profile Standard and Decor."
+						label={
+							tprofileType
+								? "Selected default profile type"
+								: "Selected non-standard profile type"
+						}
+						value={tprofileType}
+						required="Check the above checkbox to get Standard profile type."
+						onChange={() => {
+							const curr = tprofileType;
+							setProfileType(!curr);
+						}}
+					/>
+
 					{/* RANDOM IMAGE (AVATAR) PICKER */}
 					<ImagePicker
 						heading="Your Tavatar"
@@ -580,6 +603,10 @@ const Setting = (props) => {
 						onChangeL={(event) =>
 							setLinkedin(event.target.value.replace(/\s+/g, ""))
 						}
+						dvalue={tdribbble}
+						onChangeD={(event) =>
+							setDribble(event.target.value.replace(/\s+/g, ""))
+						}
 						fvalue={tfacebook}
 						onChangeF={(event) =>
 							setFacebook(event.target.value.replace(/\s+/g, ""))
@@ -606,14 +633,40 @@ const Setting = (props) => {
 					)}
 
 					<PasswordReset
-						heading="Reset Password"
+						heading="Reset Password?"
 						what="Reset your account password."
 						required="Tap the above button to send password reset email."
 						sendPasswordResetEmail={sendPasswordResetEmail}
 					/>
 
+					<SignOutSettingCard
+						heading="Sign Out!"
+						what="If you want not to use TeleByte for sometime."
+						required="Press the above button for temporary out of service."
+						signOutUser={() => {
+							if (
+								window.confirm(
+									"Are you sure. You want to sign out?"
+								)
+							) {
+								firebase
+									.auth()
+									.signOut()
+									.then(() => {
+										window.location.href =
+											window.location.origin;
+									})
+									.catch((err) => {
+										alert(
+											"Cannot sign out currently please try again."
+										);
+									});
+							}
+						}}
+					/>
+
 					<DeleteAccount
-						heading="Delete Account"
+						heading="Delete Account!"
 						what="Delete your account permanently. Your data will be lost."
 						required="Advice: If not sure go away from the above button."
 						deleteUserAccount={deleteUserAccount}

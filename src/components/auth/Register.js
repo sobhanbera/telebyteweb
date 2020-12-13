@@ -22,178 +22,189 @@ const Register = (props) => {
 		props.sL();
 
 		const passScore = zxcvbn(password).score;
-		let validData = true;
 
 		if (usernamee.length < 8 || usernamee.length > 15) {
+			props.dL();
 			alert("username must have characters between 8 - 15");
-			validData = false;
+			return;
 		} else if (!usernamee.match(usernameValidator)) {
+			props.dL();
 			alert("please enter a valid uesrname");
-			validData = false;
+			return;
 		} else if (!email.match(emailValidator)) {
+			props.dL();
 			alert("please enter a valid email address.");
-			validData = false;
+			return;
 		} else if (password.length < 8) {
+			props.dL();
 			alert("password must at least contain 8 characters");
-			validData = false;
+			return;
 		} else if (passScore <= 3) {
+			props.dL();
 			alert("Please enter a strong password.");
-			validData = false;
+			return;
 		} else if (password !== conpass) {
+			props.dL();
 			alert("password doesn't matched");
-			validData = false;
+			return;
 		}
 
 		for (let i = 0; i < fakeemails.length; ++i) {
 			if (email.includes(fakeemails[i])) {
+				props.dL();
 				alert(
 					"spam email are not allowed. please try using other verified email services."
 				);
-				validData = false;
-				break;
+				return;
 			}
 		}
 
-		if (!validData) {
-			props.dL();
-			return;
-		} else {
-			let randomImageNo = 33;
-			while (randomImageNo === 33 || randomImageNo === 86) {
-				randomImageNo = Math.floor(
-					Math.random() * combinationAvatar.length
-				);
-			}
+		let randomImageNo = 33;
+		while (randomImageNo === 33 || randomImageNo === 86) {
+			randomImageNo = Math.floor(
+				Math.random() * combinationAvatar.length
+			);
+		}
+		let time = new Date();
 
-			firebase
-				.database()
-				.ref("Telebyte")
-				.child("auth")
-				.once("value")
-				.then((snap) => {
-					if (snap.val()) {
-						if (snap.val().regOpen) {
-							firebase
-								.database()
-								.ref("Accounts")
-								.child(usernamee)
-								.once("value")
-								.then((snap) => {
-									if (snap.val()) {
-										// username already taken
-										alert(
-											"username is already taken. please choose a different username"
-										);
-									} else {
-										firebase
-											.auth()
-											.createUserWithEmailAndPassword(
-												email,
-												password
-											)
-											.then((res) => {
-												firebase
-													.database()
-													.ref("Users")
-													.child(usernamee)
-													.set({
-														article: {
-															noOfArticles: 0,
-														},
-														follow: {
-															following: 0,
-															followers: 0,
-															followingList: {},
-															followerList: {},
-														},
-														social: {
-															facebook: "",
-															instagram: "",
-															github: "",
-															linkedin: "",
-															twitter: "",
-														},
-														education: {},
-														ratings: 1,
-														about: "",
-														expertise: "",
-														location: "",
-														coverImg: "",
-														facolor: "#097bbf",
-														fullname: "",
-														phoneNo: "",
-														profileImg:
-															combinationAvatar[
-																randomImageNo
-															],
-														publics: true,
-														status: "",
-														email: email,
-														username: usernamee,
-													});
+		firebase
+			.database()
+			.ref("Telebyte")
+			.child("authentication_settings")
+			.once("value")
+			.then((snap) => {
+				if (snap.val()) {
+					if (snap.val().regOpen) {
+						firebase
+							.database()
+							.ref("Accounts")
+							.child(usernamee)
+							.once("value")
+							.then((snap) => {
+								if (snap.val()) {
+									// username already taken
+									alert(
+										"username is already taken. please choose a different username"
+									);
+								} else {
+									firebase
+										.auth()
+										.createUserWithEmailAndPassword(
+											email,
+											password
+										)
+										.then((res) => {
+											firebase
+												.database()
+												.ref("Users")
+												.child(usernamee)
+												.set({
+													article: {
+														noOfArticles: 0,
+													},
+													follow: {
+														following: 0,
+														followers: 0,
+														followingList: {},
+														followerList: {},
+													},
+													social: {
+														github: "",
+														linkedin: "",
+														dribbble: "",
+														instagram: "",
+														facebook: "",
+														twitter: "",
+													},
+													joinedOn: {
+														year: time.getFullYear(),
+														month: time.getMonth(),
+														day: time.getDay(),
+														hour: time.getHours(),
+														min: time.getMinutes(),
+														sec: time.getSeconds(),
+														millisec: time.getMilliseconds(),
+													},
+													profileImg:
+														combinationAvatar[
+															randomImageNo
+														],
+													education: {},
+													ratings: 1,
+													about: "",
+													expertise: "",
+													location: "",
+													coverImg: "",
+													facolor: "#0f60b6",
+													fullname: "",
+													phoneNo: "",
+													profileType: true,
+													publics: true,
+													status: "",
+													email: email,
+													username: usernamee,
+												});
 
-												firebase
-													.database()
-													.ref("Accounts")
-													.child(usernamee)
-													.set({
-														username: usernamee,
-													});
+											firebase
+												.database()
+												.ref("Accounts")
+												.child(usernamee)
+												.set({
+													username: usernamee,
+												});
 
-												firebase
-													.auth()
-													.currentUser.updateProfile({
-														displayName: usernamee,
-														photoURL:
-															combinationAvatar[
-																Math.floor(
-																	Math.random() *
-																		combinationAvatar.length
-																)
-															],
-														phoneNo: "",
-													});
+											firebase
+												.auth()
+												.currentUser.updateProfile({
+													displayName: usernamee,
+													photoURL:
+														combinationAvatar[
+															Math.floor(
+																Math.random() *
+																	combinationAvatar.length
+															)
+														],
+													phoneNo: "",
+												});
+											props.dL();
+
+											setUsername("");
+											setEmail("");
+											setPass("");
+											setConPass("");
+											window.location.reload();
+										})
+										.catch((err) => {
+											if (
+												err.code.includes(
+													"auth/email-already-in-use"
+												)
+											) {
 												props.dL();
-
-												setUsername("");
-												setEmail("");
-												setPass("");
-												setConPass("");
-												window.location.href =
-													"http://localhost:3000";
-											})
-											.catch((err) => {
-												if (
-													err.code.includes(
-														"auth/email-already-in-use"
-													)
-												) {
-													props.dL();
-													alert(
-														"email is already registered. try using other email address."
-													);
-												} else {
-													props.dL();
-													alert(
-														"some error occurred while creating your account please try again, or contact the developer so this could be fixed"
-													);
-												}
-											});
-									}
-								});
-						} else {
-							props.dL();
-							alert(
-								"New Users Registration in not allowed currently, Since the server load has increased too much. But you can login if you have an other account. For more details please contact the developer."
-							);
-						}
+												alert(
+													"email is already registered. try using other email address."
+												);
+											} else {
+												props.dL();
+												alert(
+													"some error occurred while creating your account please try again, or contact the developer so this could be fixed"
+												);
+											}
+										});
+								}
+							});
+					} else {
+						props.dL();
+						alert(
+							"New Users Registration in not allowed currently, Since the server load has increased too much. But you can login if you have an other account. For more details please contact the developer."
+						);
 					}
-				})
-				.catch((err) => {
-					props.dL();
-					alert("Cannot make contact with the server.");
-				});
-		}
+				}
+			})
+			.catch((err) => {
+				props.dL();
+				alert("Cannot make contact with the server.");
+			});
 
 		// firebase
 		// 	.firestore()

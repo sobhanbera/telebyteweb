@@ -4,6 +4,7 @@ import axios from "axios";
 
 import Loader from "../../../loader/Loader";
 import ErrorSection from "../../errorSection/ErrorSection";
+import OtherStandardProfile from "../standardProfile/OtherStandardProfile";
 
 const Expertise = (props) => {
 	let id = 0;
@@ -192,6 +193,7 @@ class OthersProfile extends Component {
 				fullname: "",
 				location: "",
 				profileImg: "",
+				profileType: true,
 				social: {
 					github: "",
 					linkedin: "",
@@ -300,110 +302,157 @@ class OthersProfile extends Component {
 		}
 
 		return (
-			<div
-				className={`${styles.FullProfile} ${
-					this.state.light
-						? styles.ProfileIsLight
-						: styles.ProfileIsDark
-				}`}
-				style={{ backgroundColor: this.state.userdata.facolor }}
-			>
-				<div className={styles.ProfileCard}>
-					<div className={styles.ProfileCardLeft}>
-						<div className={styles.ProfileCardLeftFlex}>
-							<div className={styles.ProfileImage}>
-								<img
-									draggable="false"
-									src={
-										window.location.origin +
-										this.state.userdata.profileImg
+			<div>
+				{!this.state.userdata.profileType ? (
+					<div
+						className={`${styles.FullProfile} ${
+							this.state.light
+								? styles.ProfileIsLight
+								: styles.ProfileIsDark
+						}`}
+						style={{ backgroundColor: this.state.userdata.facolor }}
+					>
+						<div className={styles.ProfileCard}>
+							<div className={styles.ProfileCardLeft}>
+								<div className={styles.ProfileCardLeftFlex}>
+									<div className={styles.ProfileImage}>
+										<img
+											draggable="false"
+											src={
+												window.location.origin +
+												this.state.userdata.profileImg
+											}
+											alt="tavatar"
+										/>
+									</div>
+
+									<div className={styles.ProfileFollows}>
+										<span>
+											Followers:{" "}
+											{
+												this.state.userdata.follow
+													.followers
+											}
+										</span>
+										<span>
+											Followings:{" "}
+											{
+												this.state.userdata.follow
+													.following
+											}
+										</span>
+									</div>
+
+									<div className={styles.centerThisPart}>
+										<div
+											className={
+												styles.ProfileCardLeftHRLine
+											}
+										></div>
+									</div>
+
+									<h2>{this.state.userdata.fullname}</h2>
+									<p>{this.state.userdata.username}</p>
+									<p>{this.state.userdata.email}</p>
+
+									<div className={styles.centerThisPart}>
+										<div
+											className={
+												styles.ProfileCardLeftHRLine
+											}
+										></div>
+									</div>
+
+									{this.state.userdata.status ? (
+										<div
+											className={
+												styles.ProfileCardLeftStatus
+											}
+										>
+											<h3>Status</h3>
+											<span>
+												{this.state.userdata.status}
+											</span>
+										</div>
+									) : null}
+
+									{this.state.userdata.location ? (
+										<div
+											className={
+												styles.ProfileCardLeftLocation
+											}
+										>
+											<h3>Location</h3>
+											<span>
+												{this.state.userdata.location}
+											</span>
+										</div>
+									) : null}
+
+									{this.state.social ? (
+										<SocialSection
+											github={
+												this.state.userdata.social
+													.github
+											}
+											linkedin={
+												this.state.userdata.social
+													.linkedin
+											}
+											insta={
+												this.state.userdata.social
+													.instagram
+											}
+											facebook={
+												this.state.userdata.social
+													.facebook
+											}
+											twitter={
+												this.state.userdata.social
+													.twitter
+											}
+										/>
+									) : null}
+								</div>
+							</div>
+							<div className={styles.ProfileCardRight}>
+								<div className={styles.ProfileCardRightAbout}>
+									<h3>About Me</h3>
+									<p>
+										{this.state.userdata.about
+											? this.state.userdata.about
+											: `about section is not provided by the user`}
+									</p>
+								</div>
+
+								<div className={styles.centerThisPart}>
+									<div
+										className={styles.ProfileCardLeftHRLine}
+									></div>
+								</div>
+
+								<Expertise
+									expertise={this.state.userdata.expertise}
+								/>
+
+								<div className={styles.centerThisPart}>
+									<div
+										className={styles.ProfileCardLeftHRLine}
+									></div>
+								</div>
+
+								<EducationSection
+									educationList={
+										this.state.userdata.education
 									}
-									alt="tavatar"
 								/>
 							</div>
-
-							<div className={styles.ProfileFollows}>
-								<span>
-									Followers:{" "}
-									{this.state.userdata.follow.followers}
-								</span>
-								<span>
-									Followings:{" "}
-									{this.state.userdata.follow.following}
-								</span>
-							</div>
-
-							<div className={styles.centerThisPart}>
-								<div
-									className={styles.ProfileCardLeftHRLine}
-								></div>
-							</div>
-
-							<h2>{this.state.userdata.fullname}</h2>
-							<p>{this.state.userdata.username}</p>
-							<p>{this.state.userdata.email}</p>
-
-							<div className={styles.centerThisPart}>
-								<div
-									className={styles.ProfileCardLeftHRLine}
-								></div>
-							</div>
-
-							{this.state.userdata.status ? (
-								<div className={styles.ProfileCardLeftStatus}>
-									<h3>Status</h3>
-									<span>{this.state.userdata.status}</span>
-								</div>
-							) : null}
-
-							{this.state.userdata.location ? (
-								<div className={styles.ProfileCardLeftLocation}>
-									<h3>Location</h3>
-									<span>{this.state.userdata.location}</span>
-								</div>
-							) : null}
-
-							{this.state.social ? (
-								<SocialSection
-									github={this.state.userdata.social.github}
-									linkedin={
-										this.state.userdata.social.linkedin
-									}
-									insta={this.state.userdata.social.instagram}
-									facebook={
-										this.state.userdata.social.facebook
-									}
-									twitter={this.state.userdata.social.twitter}
-								/>
-							) : null}
 						</div>
+						{this.state.showLoading ? <Loader /> : null}
 					</div>
-					<div className={styles.ProfileCardRight}>
-						<div className={styles.ProfileCardRightAbout}>
-							<h3>About Me</h3>
-							<p>
-								{this.state.userdata.about
-									? this.state.userdata.about
-									: `about section is not provided by the user`}
-							</p>
-						</div>
-
-						<div className={styles.centerThisPart}>
-							<div className={styles.ProfileCardLeftHRLine}></div>
-						</div>
-
-						<Expertise expertise={this.state.userdata.expertise} />
-
-						<div className={styles.centerThisPart}>
-							<div className={styles.ProfileCardLeftHRLine}></div>
-						</div>
-
-						<EducationSection
-							educationList={this.state.userdata.education}
-						/>
-					</div>
-				</div>
-				{this.state.showLoading ? <Loader /> : null}
+				) : (
+					<OtherStandardProfile userdata={this.state.userdata} />
+				)}
 			</div>
 		);
 	}

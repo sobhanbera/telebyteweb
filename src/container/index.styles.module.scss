@@ -30,9 +30,18 @@ $oxfordBlue: #000022;
 
 $darkBlue: #2b2d42ff;
 
-$primary: #011627;
+// $primary: #011627;
 $primaryOnHoverBack: #091e2f;
 $primaryOnActiveBack: #112635;
+
+// $primary: #097bbf;
+// $primaryOnHoverBack: #1183c7;
+// $primaryOnActiveBack: #198acf;
+
+$primary: #0f60b6;
+$primaryOnHoverBack: #0859ae;
+$primaryOnActiveBack: #0051a7;
+
 $darkGrey: #253237;
 
 $verColor: rgb(127, 246, 223);
@@ -428,15 +437,16 @@ body {
 
 		svg {
 			cursor: pointer;
-			height: 35px;
+			height: 32px;
 			width: auto;
 			fill: white;
 		}
 
 		.HeaderMenuIcon {
 			margin-left: 20px;
-			width: 35px;
+			width: 32px;
 			padding: 6px;
+			// display: none;
 
 			&:active ~ .HeaderMenu,
 			&:focus ~ .HeaderMenu {
@@ -444,58 +454,8 @@ body {
 			}
 		}
 
-		// .HeaderMenu {
-		// 	position: absolute;
-		// 	transition: top 0.5s;
-		// 	top: -1500%;
-		// 	left: 0;
-		// 	width: 100%;
-		// 	background-color: $primary;
-
-		// 	ul {
-		// 		// padding: 5px;
-
-		// 		li {
-		// 			width: 100%;
-		// 			padding: 10px 15px;
-		// 			margin: 1px 0px;
-		// 			color: white;
-		// 			background-color: $primary;
-
-		// 			a {
-		// 				font-weight: 500;
-		// 				display: block;
-		// 				text-align: start;
-		// 				width: 100%;
-		// 				color: white;
-
-		// 				&:hover {
-		// 					color: #dfdfdf;
-		// 				}
-		// 			}
-
-		// 			&:hover {
-		// 				background-color: $primaryOnHoverBack;
-		// 				color: #efefef;
-		// 			}
-
-		// 			&:active {
-		// 				background-color: $primaryOnActiveBack;
-		// 				color: #cfcfcf;
-		// 			}
-
-		// 			&:last-child {
-		// 				margin-bottom: 10px;
-		// 			}
-		// 		}
-		// 	}
-		// }
-
-		// .ShowMenu {
-		// 	display: block;
-		// }
-
 		.TBLogo {
+			margin-left: 20px;
 			height: 32px;
 		}
 
@@ -503,6 +463,25 @@ body {
 			margin-right: 20px;
 			width: 35px;
 			padding: 6px;
+
+			// .DefaultNavigation {
+			// 	display: flex;
+
+			// 	ul {
+			// 		display: flex;
+
+			// 		li {
+			// 			padding: 5px 10px;
+			// 			margin: auto 5px;
+			// 			border-radius: 3px;
+			// 			background-color: $darkGrey;
+
+			// 			a {
+			// 				color: white;
+			// 			}
+			// 		}
+			// 	}
+			// }
 		}
 	}
 }
@@ -570,6 +549,32 @@ body {
 .ShowMenu {
 	display: block;
 }
+
+@media (max-width: 800px) {
+	.HeaderStart {
+		height: 45px;
+
+		.MainHeader {
+			svg {
+				height: 31px;
+			}
+
+			.TBLogo {
+				height: 28px;
+			}
+		}
+	}
+}
+
+// @media (max-width: 1000px) {
+// 	.HeaderStart {
+// 		.MainHeader {
+// 			.HeaderMenuIcon {
+// 				display: inline-block;
+// 			}
+// 		}
+// 	}
+// }
 
 //
 // FULL FOOTER COMPONENT...
@@ -1614,6 +1619,767 @@ body {
 }
 
 //
+// STANDARD
+// PROFILE
+// DESIGN
+// GOES
+// HERE
+//
+
+.MainStandardProfileStart {
+	font-family: "Inter", sans-serif;
+	width: 100%;
+	min-height: 100vh;
+	background-color: #f0f0f0;
+	display: flex;
+	justify-content: center;
+
+	.StandardProfileArea {
+		width: 1150px;
+		background-color: transparent;
+		border-radius: 5px;
+		margin: 55px auto;
+		display: flex;
+		flex-direction: row; //default
+		justify-content: space-between;
+
+		.LeftOrTopPart {
+			width: 33%;
+			height: max-content;
+			background-color: #ffffff;
+			border-radius: 6px;
+			border: 1px solid #dadada;
+
+			.GeneralCard {
+				display: flex;
+				flex-direction: column;
+				// padding: 5px;
+
+				.ProfileImageContainer {
+					max-height: 150px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: 20px 0;
+
+					img {
+						width: 135px;
+						height: 135px;
+						border: 1px solid $primary;
+						border-radius: 50%;
+					}
+				}
+
+				.TextSection {
+					text-align: center;
+					margin: 5px 0;
+
+					p {
+						font-size: 17px;
+
+						&.FullName {
+							font-size: 20px;
+						}
+					}
+				}
+
+				.FollowStarts {
+					width: 100%;
+					display: flex;
+					margin-top: 10px;
+					padding-top: 5px;
+					padding-bottom: 5px;
+
+					.FollowersDiv,
+					.FollowingsDiv {
+						padding: 10px;
+						display: flex;
+						flex-grow: 4;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						// border-bottom: 1px solid #d5d5d5;
+						border-top: 1px solid #b9b9b9;
+
+						h3,
+						p {
+							padding: 5px;
+							// margin: 2px 0;
+						}
+					}
+
+					.FollowersDiv {
+						border-right: 1px solid #b9b9b9;
+					}
+				}
+
+				.JoinedONDiv {
+					padding-top: 13px;
+					padding-bottom: 13px;
+					display: flex;
+					flex-grow: 4;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					border-bottom: 1px solid #b9b9b9;
+					border-top: 1px solid #b9b9b9;
+
+					h3,
+					p {
+						padding: 5px;
+						margin: 2px 0;
+					}
+				}
+
+				.Status {
+					padding-top: 13px;
+					padding-bottom: 13px;
+					border-bottom: 1px solid #b9b9b9;
+
+					h4 {
+						text-align: center;
+						text-transform: uppercase;
+						font-size: 17px;
+						padding: 5px;
+						margin: 2px 0;
+					}
+
+					p {
+						text-align: center;
+						padding: 5px;
+						margin: 0 8px;
+					}
+				}
+
+				.SocialButtons {
+					margin: 10px 0;
+					padding: 5px 0;
+					display: flex;
+					flex-wrap: wrap;
+					// flex-direction: column;
+					justify-content: center;
+					align-items: center;
+
+					a {
+						transition: all 0.5s;
+						display: block;
+						width: 150px;
+						text-align: center;
+						padding: 8px 11px;
+						margin: 6px 5px;
+						border-radius: 5px;
+
+						&.MailBTN {
+							// transition: all 0.2s;
+							color: black;
+
+							background: linear-gradient(
+								124deg,
+								#ff2400,
+								#e81d1d,
+								#e8b71d,
+								#e3e81d,
+								#1de840,
+								#1ddde8,
+								#2b1de8,
+								#dd00f3,
+								#dd00f3
+							);
+							background-size: 1800% 1800%;
+
+							-webkit-animation: rainbow 10s ease infinite;
+							-z-animation: rainbow 10s ease infinite;
+							-o-animation: rainbow 10s ease infinite;
+							animation: rainbow 10s ease infinite;
+
+							&:hover {
+								background-color: transparent;
+								color: black;
+							}
+						}
+
+						&.GithubBTN {
+							background-color: #202022;
+							border: 1px solid #202022;
+							// background-color: #6e5494;
+							// border: 1px solid #6e5494;
+							color: white;
+						}
+
+						&.DribbleBTN {
+							background-color: #ea4c89;
+							border: 1px solid #ea4c89;
+							color: white;
+						}
+
+						&.LinkedinBTN {
+							background-color: #0e76a8;
+							border: 1px solid #0e76a8;
+							color: white;
+						}
+
+						&.InstaBTN {
+							background-color: #bc2a8d;
+							border: 1px solid #8a3ab9;
+							color: white;
+						}
+
+						&.FacebookBTN {
+							background-color: #3b5998;
+							border: 1px solid #3b5998;
+							color: white;
+						}
+
+						&.TwitterBTN {
+							background-color: #00acee;
+							border: 1px solid #00acee;
+							color: white;
+						}
+
+						&:hover {
+							background-color: transparent;
+							color: black;
+						}
+					}
+				}
+			}
+		}
+
+		.RightOrBottomPart {
+			width: 60%;
+			height: max-content;
+			border-radius: 6px;
+			border: 1px solid #dadada;
+			background-color: #ffffff;
+			padding: 5px;
+
+			.AboutSectionCard {
+				display: flex;
+				flex-direction: column;
+
+				.AboutText {
+					display: flex;
+					flex-direction: column;
+					border-bottom: 1px solid #b9b9b9;
+
+					h4 {
+						font-size: 18px;
+						text-transform: uppercase;
+						padding: 5px 6px;
+						text-align: center;
+					}
+
+					p {
+						padding: 5px 15px;
+						// margin-bottom: 10px;
+						text-align: start;
+
+						&:first-child {
+							margin-top: 10px;
+						}
+
+						&:last-child {
+							margin-bottom: 10px;
+						}
+					}
+				}
+
+				.EducationText {
+					.ProfileEducationSection {
+						margin: 0 5px;
+						margin-bottom: 10px;
+						padding-bottom: 10px;
+						display: flex;
+						flex-direction: column;
+						border-bottom: 1px solid #b9b9b9;
+
+						h4 {
+							margin-top: 12px;
+							font-size: 18px;
+							text-transform: uppercase;
+							padding: 5px 6px;
+							text-align: center;
+						}
+
+						span {
+							text-align: center;
+						}
+
+						.ProfileEducationCard {
+							padding: 6px 10px;
+							margin: 5px 0;
+							border-radius: 5px;
+							border: 1px solid #cfcfcf;
+							box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1),
+								0px 0px 1px rgba(0, 0, 0, 0.1),
+								0px 0px 1px 0 rgba(0, 0, 0, 0.1);
+
+							h5 {
+								font-size: 16px;
+							}
+
+							span {
+								font-size: 16px;
+							}
+						}
+					}
+
+					.ProfileCardRightExpertise {
+						padding: 10px;
+						margin-top: 10px;
+						margin-bottom: 10px;
+
+						h4 {
+							font-size: 18px;
+							text-transform: uppercase;
+							padding: 5px 6px;
+							text-align: center;
+						}
+
+						.ExpertiseContainer {
+							display: flex;
+							flex-wrap: wrap;
+
+							.ProfileCardRightExpertiseSpan {
+								width: max-content;
+								background-color: $primaryOnActiveBack;
+								color: white;
+								padding: 6px 12px;
+								border-radius: 4px;
+								text-align: center;
+								margin: 3px 7px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.MainStandardProfileStart {
+		.StandardProfileArea {
+			width: 1000px;
+			border-radius: 0;
+
+			.LeftOrTopPart {
+				width: 350px;
+			}
+
+			.RightOrBottomPart {
+				width: 640px;
+			}
+			// flex-direction: column;
+		}
+	}
+}
+
+@media (max-width: 1050px) {
+	.MainStandardProfileStart {
+		.StandardProfileArea {
+			width: 90%;
+			border-radius: 0;
+
+			.LeftOrTopPart {
+				width: 40%;
+			}
+
+			.RightOrBottomPart {
+				width: 60%;
+			}
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.MainStandardProfileStart {
+		.StandardProfileArea {
+			margin-top: 0;
+			margin-bottom: 0;
+			width: 98%;
+			border-radius: 0;
+
+			.RightOrBottomPart {
+				.AboutSectionCard {
+					.EducationText {
+						.ProfileCardRightExpertise {
+							.ExpertiseContainer {
+								.ProfileCardRightExpertiseSpan {
+									margin: 2px 4px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 650px) {
+	.MainStandardProfileStart {
+		.StandardProfileArea {
+			width: 100%;
+			flex-direction: column;
+
+			.LeftOrTopPart,
+			.RightOrBottomPart {
+				border-radius: 0;
+				width: 100%;
+				border: none;
+			}
+
+			.LeftOrTopPart {
+				border-bottom: 1px solid #b0b0b0;
+			}
+		}
+	}
+}
+
+@-webkit-keyframes rainbow {
+	0% {
+		background-position: 0% 82%;
+	}
+	50% {
+		background-position: 100% 19%;
+	}
+	100% {
+		background-position: 0% 82%;
+	}
+}
+@-moz-keyframes rainbow {
+	0% {
+		background-position: 0% 82%;
+	}
+	50% {
+		background-position: 100% 19%;
+	}
+	100% {
+		background-position: 0% 82%;
+	}
+}
+@-o-keyframes rainbow {
+	0% {
+		background-position: 0% 82%;
+	}
+	50% {
+		background-position: 100% 19%;
+	}
+	100% {
+		background-position: 0% 82%;
+	}
+}
+@keyframes rainbow {
+	0% {
+		background-position: 0% 82%;
+	}
+	50% {
+		background-position: 100% 19%;
+	}
+	100% {
+		background-position: 0% 82%;
+	}
+}
+
+// #ff0000,
+// #ff4000,
+// #ff8000,
+// #ffbf00,
+// #ffff00,
+// #bfff00,
+// #80ff00,
+// #40ff00,
+// #00ff00,
+// #00ff40,
+// #00ff80,
+// #00ffbf,
+// #00ffff,
+// #00bfff,
+// #0080ff,
+// #0040ff,
+// #0000ff,
+// #4000ff,
+// #8000ff,
+// #bf00ff,
+// #ff00ff,
+// #ff00bf,
+// #ff0080,
+// #ff0040
+
+// @keyframes mailButtonAnim {
+// 	0% {
+// 		background: linear-gradient(to right, #ff0040, #ff0000);
+// 		border: 1px solid #ff0000;
+// 		// color: white;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	4% {
+// 		background: linear-gradient(to right, #ff0000, #ff4000);
+// 		// background-color: #ff4000;
+// 		border: 1px solid #ff4000;
+// 		// color: white;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	8% {
+// 		background: linear-gradient(to right, #ff4000, #ff8000);
+// 		// background-color: #ff8000;
+// 		border: 1px solid #ff8000;
+// 		// color: white;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	12% {
+// 		background: linear-gradient(to right, #ff8000, #ffbf00);
+// 		// background-color: #ffbf00;
+// 		border: 1px solid #ffbf00;
+// 		// color: black;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	17% {
+// 		background: linear-gradient(to right, #ffbf00, #ffff00);
+// 		// background-color: #ffff00;
+// 		border: 1px solid #ffff00;
+// 		// color: black;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	21% {
+// 		background: linear-gradient(to right, #ffff00, #bfff00);
+// 		// background-color: #bfff00;
+// 		border: 1px solid #bfff00;
+// 		// color: black;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	25% {
+// 		background: linear-gradient(to right, #bfff00, #80ff00);
+// 		// background-color: #80ff00;
+// 		border: 1px solid #80ff00;
+// 		// color: black;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	29% {
+// 		background: linear-gradient(to right, #80ff00, #40ff00);
+// 		// background-color: #40ff00;
+// 		border: 1px solid #40ff00;
+// 		// color: black;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	33% {
+// 		background: linear-gradient(to right, #40ff00, #00ff00);
+// 		// background-color: #00ff00;
+// 		border: 1px solid #00ff00;
+// 		// color: black;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	37% {
+// 		background: linear-gradient(to right, #00ff00, #00ff40);
+// 		// background-color: #00ff40;
+// 		border: 1px solid #00ff40;
+// 		// color: black;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	41% {
+// 		background: linear-gradient(to right, #00ff40, #00ff80);
+// 		// background-color: #00ff80;
+// 		border: 1px solid #00ff80;
+// 		// color: black;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	45% {
+// 		background: linear-gradient(to right, #00ff80, #00ffbf);
+// 		// background-color: #00ffbf;
+// 		border: 1px solid #00ffbf;
+// 		// color: black;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	49% {
+// 		background: linear-gradient(to right, #00ffbf, #00ffff);
+// 		// background-color: #00ffff;
+// 		border: 1px solid #00ffff;
+// 		// color: black;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	53% {
+// 		background: linear-gradient(to right, #00ffff, #00bfff);
+// 		// background-color: #00bfff;
+// 		border: 1px solid #00bfff;
+// 		// color: black;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	57% {
+// 		background: linear-gradient(to right, #00bfff, #0080ff);
+// 		// background-color: #0080ff;
+// 		border: 1px solid #0080ff;
+// 		// color: white;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	61% {
+// 		background: linear-gradient(to right, #0080ff, #0040ff);
+// 		// background-color: #0040ff;
+// 		border: 1px solid #0040ff;
+// 		// color: white;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	65% {
+// 		background: linear-gradient(to right, #0040ff, #0000ff);
+// 		// background-color: #0000ff;
+// 		border: 1px solid #0000ff;
+// 		// color: white;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	69% {
+// 		background: linear-gradient(to right, #0000ff, #4000ff);
+// 		// background-color: #4000ff;
+// 		border: 1px solid #4000ff;
+// 		// color: white;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	75% {
+// 		background: linear-gradient(to right, #4000ff, #8000ff);
+// 		// background-color: #8000ff;
+// 		border: 1px solid #8000ff;
+// 		// color: white;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	80% {
+// 		background: linear-gradient(to right, #8000ff, #bf00ff);
+// 		// background-color: #bf00ff;
+// 		border: 1px solid #bf00ff;
+// 		// color: white;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	85% {
+// 		background: linear-gradient(to right, #bf00ff, #ff00ff);
+// 		// background-color: #ff00ff;
+// 		border: 1px solid #ff00ff;
+// 		// color: white;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	90% {
+// 		background: linear-gradient(to right, #ff00ff, #ff00bf);
+// 		// background-color: #ff00bf;
+// 		border: 1px solid #ff00bf;
+// 		// color: white;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+
+// 	95% {
+// 		background: linear-gradient(to right, #ff00bf, #ff0080);
+// 		// background-color: #ff0080;
+// 		border: 1px solid #ff0080;
+// 		// color: white;
+// 		color: black;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// 	100% {
+// 		background: linear-gradient(to right, #ff0080, #ff0040);
+// 		// background-color: #ff0040;
+// 		border: 1px solid #ff0040;
+// 		color: black;
+// 		// color: white;
+// 		&:hover {
+// 			background-color: transparent;
+// 			color: black;
+// 		}
+// 	}
+// }
+
+// a.MailBTN:hover {
+// 	background-color: transparent;
+// 	color: black;
+// }
+
+//
 // GLOBAL ERROR SECTION
 // STARTS FROM
 // HERE
@@ -1703,7 +2469,7 @@ body {
 		margin-bottom: 30px;
 		background-color: #ffffff;
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-evenly;
 		align-items: flex-start;
 
 		.SettingNavigation {
@@ -1810,7 +2576,8 @@ body {
 						&:hover,
 						&:active,
 						&:focus {
-							border: 1px solid #202020;
+							// border: 1px solid #202020;
+							border: 1px solid $primary;
 						}
 
 						&.Disabled:hover,
@@ -1818,6 +2585,15 @@ body {
 						&.Disabled:focus {
 							border: 1px solid red;
 						}
+					}
+
+					input.Checkbox {
+						cursor: pointer;
+						width: 20px;
+						height: 20px;
+						padding: 0;
+						margin: 10px;
+						appearance: checkbox;
 					}
 
 					textarea {
@@ -1844,7 +2620,8 @@ body {
 						&:hover,
 						&:active,
 						&:focus {
-							border: 1px solid #202020;
+							// border: 1px solid #202020;
+							border: 1px solid $primary;
 						}
 
 						&.ShortHeightTextarea {

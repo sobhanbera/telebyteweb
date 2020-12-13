@@ -1,6 +1,7 @@
 import React from "react";
 // import { useEffect } from "react";
-import styles from "../../elements/styles/style";
+import styles from "../../../elements/styles/style";
+import StandardProfile from "../standardProfile/StandardProfile";
 // import firebase from "../../../container/Firebase";
 
 const Expertise = (props) => {
@@ -174,6 +175,7 @@ const Profile = (props) => {
 		fullname,
 		location,
 		profileImg,
+		profileType,
 		social,
 		status,
 		username,
@@ -235,95 +237,117 @@ const Profile = (props) => {
 	}
 
 	return (
-		<div
-			className={`${styles.FullProfile} ${
-				light ? styles.ProfileIsLight : styles.ProfileIsDark
-			}`}
-			style={{ backgroundColor: facolor }}
-		>
-			<div className={styles.ProfileCard}>
-				<div className={styles.ProfileCardLeft}>
-					<div className={styles.ProfileCardLeftFlex}>
-						<div className={styles.ProfileImage}>
-							<img
-								draggable="false"
-								src={websiteOrigin + profileImg}
-								alt="tavatar"
+		<div>
+			{!profileType ? (
+				<div
+					className={`${styles.FullProfile} ${
+						light ? styles.ProfileIsLight : styles.ProfileIsDark
+					}`}
+					style={{ backgroundColor: facolor }}
+				>
+					<div className={styles.ProfileCard}>
+						<div className={styles.ProfileCardLeft}>
+							<div className={styles.ProfileCardLeftFlex}>
+								<div className={styles.ProfileImage}>
+									<img
+										draggable="false"
+										src={websiteOrigin + profileImg}
+										alt="tavatar"
+									/>
+								</div>
+
+								<div className={styles.ProfileFollows}>
+									<span>Followers: {followers}</span>
+									<span>Followings: {followings}</span>
+								</div>
+
+								<div className={styles.centerThisPart}>
+									<div
+										className={styles.ProfileCardLeftHRLine}
+									></div>
+								</div>
+
+								<h2>{fullname}</h2>
+								<p>{username}</p>
+								<p>{email}</p>
+
+								<div className={styles.centerThisPart}>
+									<div
+										className={styles.ProfileCardLeftHRLine}
+									></div>
+								</div>
+
+								<div
+									className={styles.ProfileCardLeftHRLine}
+								></div>
+
+								<div className={styles.ProfileCardLeftStatus}>
+									<h3>Status</h3>
+									{status ? (
+										<span>{status}</span>
+									) : (
+										<span>No Status</span>
+									)}
+								</div>
+
+								{location ? (
+									<div
+										className={
+											styles.ProfileCardLeftLocation
+										}
+									>
+										<h3>Location</h3>
+										<span>{location}</span>
+									</div>
+								) : null}
+
+								<SocialSection
+									github={github}
+									linkedin={linkedin}
+									insta={insta}
+									facebook={facebook}
+									twitter={twitter}
+								/>
+							</div>
+						</div>
+						<div className={styles.ProfileCardRight}>
+							<div className={styles.ProfileCardRightAbout}>
+								<h3>About Me</h3>
+								<p>
+									{about
+										? about
+										: `about section is not provided by ${
+												username || "user"
+										  }`}
+								</p>
+							</div>
+
+							<div className={styles.centerThisPart}>
+								<div
+									className={styles.ProfileCardLeftHRLine}
+								></div>
+							</div>
+
+							<Expertise expertise={expertise} />
+
+							<div className={styles.centerThisPart}>
+								<div
+									className={styles.ProfileCardLeftHRLine}
+								></div>
+							</div>
+
+							<EducationSection
+								educationList={education}
+								username={username}
 							/>
 						</div>
-
-						<div className={styles.ProfileFollows}>
-							<span>Followers: {followers}</span>
-							<span>Followings: {followings}</span>
-						</div>
-
-						<div className={styles.centerThisPart}>
-							<div className={styles.ProfileCardLeftHRLine}></div>
-						</div>
-
-						<h2>{fullname}</h2>
-						<p>{username}</p>
-						<p>{email}</p>
-
-						<div className={styles.centerThisPart}>
-							<div className={styles.ProfileCardLeftHRLine}></div>
-						</div>
-
-						<div className={styles.ProfileCardLeftHRLine}></div>
-
-						<div className={styles.ProfileCardLeftStatus}>
-							<h3>Status</h3>
-							{status ? (
-								<span>{status}</span>
-							) : (
-								<span>No Status</span>
-							)}
-						</div>
-
-						{location ? (
-							<div className={styles.ProfileCardLeftLocation}>
-								<h3>Location</h3>
-								<span>{location}</span>
-							</div>
-						) : null}
-
-						<SocialSection
-							github={github}
-							linkedin={linkedin}
-							insta={insta}
-							facebook={facebook}
-							twitter={twitter}
-						/>
 					</div>
 				</div>
-				<div className={styles.ProfileCardRight}>
-					<div className={styles.ProfileCardRightAbout}>
-						<h3>About Me</h3>
-						<p>
-							{about
-								? about
-								: `about section is not provided by ${
-										username || "user"
-								  }`}
-						</p>
-					</div>
-
-					<div className={styles.centerThisPart}>
-						<div className={styles.ProfileCardLeftHRLine}></div>
-					</div>
-
-					<Expertise expertise={expertise} />
-
-					<div className={styles.centerThisPart}>
-						<div className={styles.ProfileCardLeftHRLine}></div>
-					</div>
-
-					<EducationSection
-						educationList={education}
-						username={username}
-					/>
-				</div>
-			</div>
+			) : (
+				//
+				<StandardProfile userdata={props.userdata} />
+				//
+			)}
 		</div>
 	);
 };
