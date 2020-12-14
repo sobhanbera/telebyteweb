@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactMarkdown from "react-markdown";
 import styles from "../../../elements/styles/style";
 
 const SettingCard = (props) => {
@@ -28,6 +29,25 @@ const SettingCard = (props) => {
 							{props.length}
 							{` / ${props.max} characters.`}
 						</span>
+
+						{props.id === "about" ? (
+							<>
+								<h4
+									style={{
+										marginTop: "10px",
+										marginBottom: "5px",
+									}}
+								>
+									About Preview
+								</h4>
+								<div className={styles.AboutMarkdown}>
+									<ReactMarkdown
+										source={props.value}
+										allowDangerousHtml
+									/>
+								</div>
+							</>
+						) : null}
 					</>
 				) : (
 					<input
@@ -49,6 +69,56 @@ const SettingCard = (props) => {
 		</div>
 	);
 };
+
+// const AboutSettingCard = (props) => {
+// 	return (
+// 		<div className={styles.SettingCard} id={props.id}>
+// 			<div className={styles.CardTop}>
+// 				<h4>{props.heading}</h4>
+// 				<p>{props.what}</p>
+// 				<div
+// 					contentEditable
+// 					className={styles.textarea}
+// 					onChange={() => console.log("changed")}
+// 				>
+// 					{props.value}
+// 				</div>
+// 				{/* <textarea
+// 					className={
+// 						props.id === "status" ? styles.ShortHeightTextarea : ""
+// 					}
+// 					disabled={props.disabled}
+// 					type={props.type}
+// 					value={props.value}
+// 					onChange={(event) => props.onChange(event)}
+// 					placeholder={props.placeholder}
+// 					autoComplete="off"
+// 					minLength={props.min}
+// 					maxLength={props.max}
+// 				/> */}
+// 				<span>
+// 					{props.length}
+// 					{` / ${props.max} characters.`}
+// 				</span>
+// 				<h4
+// 					style={{
+// 						marginTop: "10px",
+// 						marginBottom: "5px",
+// 					}}
+// 				>
+// 					About Preview
+// 				</h4>
+// 				<div className={styles.AboutMarkdown}>
+// 					<ReactMarkdown source={props.value} allowDangerousHtml />
+// 				</div>
+// 			</div>
+
+// 			<div className={styles.CardBottom}>
+// 				<span>{props.required}</span>
+// 			</div>
+// 		</div>
+// 	);
+// };
 
 const PhoneNumberCard = (props) => {
 	return (
@@ -360,7 +430,12 @@ const ImagePicker = (props) => {
 			<div className={styles.CardTop}>
 				<h4>{props.heading}</h4>
 				<p>{props.what}</p>
-				<img draggable="false" src={props.img} alt="update tavatar" />
+				<img
+					className={styles.SettingPofileImage}
+					draggable="false"
+					src={props.img}
+					alt="update tavatar"
+				/>
 			</div>
 
 			<div className={styles.RandomButton}>
@@ -509,6 +584,7 @@ const DeleteAccount = (props) => {
 
 export default SettingCard;
 export {
+	// AboutSettingCard,
 	PhoneNumberCard,
 	EmailNotVeified,
 	PasswordReset,

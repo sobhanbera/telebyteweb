@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../../elements/styles/style";
+import ReactMarkdown from "react-markdown";
 
 const websiteOrigin = window.location.origin;
 const months = [
@@ -29,6 +30,7 @@ const StandardProfile = (props) => {
 		month,
 		year;
 	// article, phoneNo, publics,field is also available...
+	// profileType, and this also...
 	let {
 		profileImg,
 		fullname,
@@ -45,8 +47,6 @@ const StandardProfile = (props) => {
 		education,
 		expertise,
 		about,
-
-		profileType,
 	} = props.userdata;
 	if (follow) {
 		followers = follow.followers;
@@ -111,6 +111,10 @@ const StandardProfile = (props) => {
 						linkedin={linkedin}
 						twitter={twitter}
 						facolor={facolor}
+						textColor={
+							colorIsLight(facolor) ? "#000000" : "#ffffff"
+						}
+						expertise={expertise}
 					/>
 				</div>
 				<div className={styles.RightOrBottomPart}>
@@ -134,7 +138,11 @@ const GeneralProfileCard = (props) => {
 	return (
 		<div className={styles.GeneralCard}>
 			<div className={styles.ProfileImageContainer}>
-				<img src={websiteOrigin + props.profileImg} alt="tavatar" />
+				<img
+					className={styles.ProfileImage}
+					src={websiteOrigin + props.profileImg}
+					alt="tavatar"
+				/>
 			</div>
 			<div className={styles.TextSection}>
 				{props.fullname ? (
@@ -155,14 +163,22 @@ const GeneralProfileCard = (props) => {
 			</div>
 			<div className={styles.JoinedONDiv}>
 				<h4>Joined On</h4>
-				<p>{months[props.month - 1] + " " + props.year}</p>
+				<p>{months[props.month] + " " + props.year}</p>
 			</div>
+
 			{props.status ? (
 				<div className={styles.Status}>
 					<h4>Status</h4>
 					<p>{props.status}</p>
 				</div>
 			) : null}
+
+			<Expertise
+				expertise={props.expertise}
+				textColor={props.textColor}
+				facolor={props.facolor}
+			/>
+
 			<div className={styles.SocialButtons}>
 				{props.github ? (
 					<a className={styles.GithubBTN} href={props.github}>
@@ -208,13 +224,13 @@ const GeneralProfileCard = (props) => {
 };
 
 const AboutSection = (props) => {
-	let mainAboutText;
-	if (props.about) {
-		let id = 0;
-		mainAboutText = props.about
-			.split("\\n")
-			.map((str) => <p key={id++}>{str}</p>);
-	}
+	// let mainAboutText;
+	// if (props.about) {
+	// 	let id = 0;
+	// 	mainAboutText = props.about
+	// 		.split("\\n")
+	// 		.map((str) => <p key={id++}>{str}</p>);
+	// }
 
 	return (
 		<div>
@@ -222,12 +238,21 @@ const AboutSection = (props) => {
 				<div className={styles.AboutSectionCard}>
 					{props.about ? (
 						<div className={styles.AboutText}>
-							<h4>About</h4>
-							{mainAboutText}
+							{/* <h4>About</h4> */}
+							<a href={window.location.origin + "/setting#about"}>
+								{"<Edit Source>"}
+							</a>
+							<div className={styles.MarkdownCodeAbout}>
+								<ReactMarkdown
+									source={props.about}
+									allowDangerousHtml
+								/>
+							</div>
+							{/* {mainAboutText} */}
 							{/* <p>{props.about}</p> */}
 						</div>
 					) : null}
-					{props.education || props.expertise ? (
+					{props.education ? (
 						<div className={styles.EducationText}>
 							{props.education ? (
 								<EducationSection
@@ -236,13 +261,13 @@ const AboutSection = (props) => {
 								/>
 							) : null}
 
-							{props.expertise ? (
+							{/* {props.expertise ? (
 								<Expertise
 									expertise={props.expertise}
 									textColor={props.textColor}
 									facolor={props.facolor}
 								/>
-							) : null}
+							) : null} */}
 						</div>
 					) : null}
 				</div>

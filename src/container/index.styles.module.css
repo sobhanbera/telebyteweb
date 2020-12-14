@@ -1775,7 +1775,7 @@ body {
 }
 
 .MainStandardProfileStart .StandardProfileArea {
-  width: 1150px;
+  width: 1300px;
   background-color: transparent;
   border-radius: 5px;
   margin: 55px auto;
@@ -1792,7 +1792,7 @@ body {
 }
 
 .MainStandardProfileStart .StandardProfileArea .LeftOrTopPart {
-  width: 33%;
+  width: 30%;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -1825,7 +1825,7 @@ body {
   margin: 20px 0;
 }
 
-.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .ProfileImageContainer img {
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .ProfileImageContainer img.ProfileImage {
   width: 135px;
   height: 135px;
   border: 1px solid #0f60b6;
@@ -1937,6 +1937,41 @@ body {
   margin: 0 8px;
 }
 
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .ProfileCardRightExpertise {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #b9b9b9;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .ProfileCardRightExpertise h4 {
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 5px 6px;
+  text-align: center;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .ProfileCardRightExpertise .ExpertiseContainer {
+  cursor: default;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .ProfileCardRightExpertise .ExpertiseContainer .ProfileCardRightExpertiseSpan {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #0051a7;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-align: center;
+  margin: 3px 7px;
+}
+
 .MainStandardProfileStart .StandardProfileArea .LeftOrTopPart .GeneralCard .SocialButtons {
   margin: 10px 0;
   padding: 5px 0;
@@ -2020,7 +2055,7 @@ body {
 }
 
 .MainStandardProfileStart .StandardProfileArea .RightOrBottomPart {
-  width: 60%;
+  width: 69%;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -2048,27 +2083,47 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-bottom: 1px solid #b9b9b9;
 }
 
-.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText h4 {
-  font-size: 18px;
-  text-transform: uppercase;
-  padding: 5px 6px;
-  text-align: center;
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText a {
+  color: #0f60b6;
+  display: block;
+  padding: 5px 10px;
 }
 
-.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText p {
-  padding: 5px 15px;
-  text-align: start;
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText a:hover {
+  color: #0859ae;
 }
 
-.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText p:first-child {
-  margin-top: 10px;
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText a:active {
+  color: #0051a7;
 }
 
-.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText p:last-child {
-  margin-bottom: 10px;
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText a:visited {
+  color: #0f60b6;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText .MarkdownCodeAbout {
+  border-radius: 5px;
+  margin: -5px;
+  border: 1px solid #b9b9b9;
+  padding: 10px;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText .MarkdownCodeAbout a {
+  color: #0f60b6;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText .MarkdownCodeAbout a:hover {
+  color: #0859ae;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText .MarkdownCodeAbout a:active {
+  color: #0051a7;
+}
+
+.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .AboutText .MarkdownCodeAbout a:visited {
+  color: #0f60b6;
 }
 
 .MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileEducationSection {
@@ -2082,7 +2137,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-bottom: 1px solid #b9b9b9;
 }
 
 .MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileEducationSection h4 {
@@ -2114,40 +2168,7 @@ body {
   font-size: 16px;
 }
 
-.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileCardRightExpertise {
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileCardRightExpertise h4 {
-  font-size: 18px;
-  text-transform: uppercase;
-  padding: 5px 6px;
-  text-align: center;
-}
-
-.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileCardRightExpertise .ExpertiseContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.MainStandardProfileStart .StandardProfileArea .RightOrBottomPart .AboutSectionCard .EducationText .ProfileCardRightExpertise .ExpertiseContainer .ProfileCardRightExpertiseSpan {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  background-color: #0051a7;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 4px;
-  text-align: center;
-  margin: 3px 7px;
-}
-
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .MainStandardProfileStart .StandardProfileArea {
     width: 1000px;
     border-radius: 0;
@@ -2427,7 +2448,7 @@ body {
   font-size: 15px;
 }
 
-.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop img {
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop img.SettingPofileImage {
   border: 2px solid #dfdfdf;
   border-radius: 50%;
   margin-top: 5px;
@@ -2473,10 +2494,10 @@ body {
 
 .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea {
   resize: none;
-  max-width: 50%;
-  max-height: 200px;
-  width: 50%;
-  height: 200px;
+  max-width: 100%;
+  max-height: 500px;
+  width: 100%;
+  height: 500px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   margin-top: 5px;
@@ -2499,8 +2520,26 @@ body {
 }
 
 .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop textarea.ShortHeightTextarea {
+  max-width: 75%;
   max-height: 75px;
   height: 75px;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop .textarea {
+  width: 100%;
+  height: 500px;
+  overflow: scroll;
+}
+
+.SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop .AboutMarkdown {
+  font-family: "Inter", sans-serif;
+  max-width: 100%;
+  max-height: 500px;
+  width: 100%;
+  height: 500px;
+  overflow: scroll;
+  border-radius: 3px;
+  border: 1px solid #cfcfcf;
 }
 
 .SettingSectionStart .SettingArea .SettingMainWorkingArea .SettingCard .CardTop input[name="color"] {
@@ -2783,12 +2822,23 @@ body {
 
 .AboutSectionStart .MainAboutSection {
   margin-top: 30px;
-  width: 1100px;
+  width: 1350px;
   border-radius: 6px 6px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .AboutSectionStart .MainAboutSection .MainKeymapSection {
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .AboutSectionStart .MainAboutSection .MainKeymapSection .DisplaySection {
@@ -2847,5 +2897,31 @@ body {
 
 .AboutSectionStart .MainAboutSection .MainKeymapSection .MainKeymaps .Keymap.Shaded {
   background-color: #f6f6f6;
+}
+
+.AboutSectionStart .MainAboutSection .ProfileEditorGuideStart {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.AboutSectionStart .MainAboutSection .ProfileEditorGuideStart .DisplaySection {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 6px 6px 0 0;
+  padding: 6px 8px;
+  border-bottom: 1px solid #cfcfcf;
 }
 /*# sourceMappingURL=index.styles.module.css.map */

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../elements/styles/style";
 import SettingCard, {
+	// AboutSettingCard,
 	ColorPicker,
 	Education,
 	EmailNotVeified,
@@ -223,7 +224,14 @@ const Setting = (props) => {
 		}
 
 		if (tabout.length > 0 && tabout.length < 100) {
-			alert("(About You) must contain 100 characters minimum.");
+			alert(
+				"(About You) must contain 100 characters minimum if you are providing."
+			);
+			return;
+		}
+
+		if (tabout.length > 2000) {
+			alert("(About You) length should not exceed 1500 characters.");
 			return;
 		}
 
@@ -498,18 +506,32 @@ const Setting = (props) => {
 						type="text"
 						required="Please use 100 characters at max."
 					/>
+
+					{/* <AboutSettingCard
+						heading="About You"
+						what="Write someting about yourself to show in public."
+						value={tabout}
+						onChange={(event) => setAbout(event.target.value)}
+						placeholder="About You (you may write simple text or markdown code here)."
+						id="about"
+						disabled={false}
+						min="100"
+						max="2000"
+						length={tabout ? tabout.length : "0"}
+						type="text"
+						required="Please use 100 - 500 characters at max."
+					/> */}
+
 					<SettingCard
 						heading="About You"
 						what="Write someting about yourself to show in public."
 						value={tabout}
-						onChange={(event) =>
-							setAbout(event.target.value.replace(/\s+/g, " "))
-						}
-						placeholder="About You"
+						onChange={(event) => setAbout(event.target.value)}
+						placeholder="About You (you may write simple text or markdown code here)."
 						id="about"
 						disabled={false}
 						min="100"
-						max="1000"
+						max="2000"
 						length={tabout ? tabout.length : "0"}
 						type="text"
 						required="Please use 100 - 500 characters at max."
