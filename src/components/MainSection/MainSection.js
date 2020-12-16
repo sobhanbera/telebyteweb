@@ -10,6 +10,7 @@ import Profile from "./profileSection/decoProfile/Profile";
 import OthersProfile from "./profileSection/othersProfileSection/OthersProfile";
 import Support from "./supportSection/Support";
 import About from "./aboutSection/About";
+import MdEditor from "./mdeditor/MdEditor";
 
 class MainSection extends Component {
 	constructor(props) {
@@ -21,6 +22,14 @@ class MainSection extends Component {
 		return (
 			<div className={styles.MainContentStart}>
 				<Switch>
+					{/* EXTRA COMPONENTS ROUTINGS */}
+					<Route
+						exact
+						path="/md/editor"
+						component={() => <MdEditor />}
+					/>
+
+					{/* APP ITSELF */}
 					<Route
 						exact
 						path="/explore"

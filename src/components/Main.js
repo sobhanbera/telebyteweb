@@ -125,6 +125,14 @@ class Main extends React.Component {
 			showLoading: false,
 		});
 
+		setTimeout(() => {
+			if (this.state.showLoading) {
+				alert(
+					"Internet issues found. Please check your internet connection."
+				);
+			}
+		}, 12000);
+
 		// firebase
 		// 	.database()
 		// 	.ref("Telebyte")
