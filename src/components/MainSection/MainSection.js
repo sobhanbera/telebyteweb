@@ -1,15 +1,16 @@
-import React, { Component } from "react";
-import styles from "../elements/styles/style";
+import React, { Component } from 'react';
+import styles from '../elements/styles/style';
 
-import { Switch, Route } from "react-router-dom";
-import Dashboard from "./dashboardSection/Dashboard";
-import Explore from "./exploreSection/Explore";
-import Tools from "./toolsSection/Tools";
-import Setting from "./settingsSection/Settings";
-import Profile from "./profileSection/decoProfile/Profile";
-import OthersProfile from "./profileSection/othersProfileSection/OthersProfile";
-import Support from "./supportSection/Support";
-import About from "./aboutSection/About";
+import { Switch, Route } from 'react-router-dom';
+import Dashboard from './dashboardSection/Dashboard';
+import Explore from './exploreSection/Explore';
+import Tools from './toolsSection/Tools';
+import Setting from './settingsSection/Settings';
+import Profile from './profileSection/decoProfile/Profile';
+import OthersProfile from './profileSection/othersProfileSection/OthersProfile';
+import Support from './supportSection/Support';
+import About from './aboutSection/About';
+import MdEditor from './mdeditor/MdEditor';
 
 class MainSection extends Component {
 	constructor(props) {
@@ -21,19 +22,21 @@ class MainSection extends Component {
 		return (
 			<div className={styles.MainContentStart}>
 				<Switch>
+					{/* EXTRA COMPONENTS ROUTINGS */}
+					<Route exact path='/md/editor' component={() => <MdEditor />} />
+
+					{/* APP ITSELF */}
 					<Route
 						exact
-						path="/explore"
-						component={() => (
-							<Explore userdata={this.props.userdata} />
-						)}
+						path='/explore'
+						component={() => <Explore userdata={this.props.userdata} />}
 					/>
 
-					<Route exact path="/tools" component={Tools} />
+					<Route exact path='/tools' component={Tools} />
 
 					<Route
 						exact
-						path="/setting"
+						path='/setting'
 						component={() => (
 							<Setting
 								userdata={this.props.userdata}
@@ -44,40 +47,28 @@ class MainSection extends Component {
 
 					<Route
 						exact
-						path="/profile"
-						component={() => (
-							<Profile userdata={this.props.userdata} />
-						)}
+						path='/profile'
+						component={() => <Profile userdata={this.props.userdata} />}
 					/>
-					<Route
-						exact
-						path="/users/*"
-						component={() => <OthersProfile />}
-					/>
+					<Route exact path='/users/*' component={() => <OthersProfile />} />
 
-					<Route exact path="/support" component={Support} />
-					<Route exact path="/about" component={About} />
+					<Route exact path='/support' component={Support} />
+					<Route exact path='/about' component={About} />
 
 					<Route
 						exact
-						path="/dashboard"
-						component={() => (
-							<Dashboard userdata={this.props.userdata} />
-						)}
+						path='/dashboard'
+						component={() => <Dashboard userdata={this.props.userdata} />}
 					/>
 					<Route
 						exact
-						path="/"
-						component={() => (
-							<Dashboard userdata={this.props.userdata} />
-						)}
+						path='/'
+						component={() => <Dashboard userdata={this.props.userdata} />}
 					/>
 					<Route
 						exact
-						path="*"
-						component={() => (
-							<Dashboard userdata={this.props.userdata} />
-						)}
+						path='*'
+						component={() => <Dashboard userdata={this.props.userdata} />}
 					/>
 				</Switch>
 			</div>
