@@ -1,9 +1,9 @@
 /* Karla */
-@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 /* Yeseva One */
-@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 /* Inter */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;900&display=swap');
 /* Poppins */
 // @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* Montserrat */
@@ -80,7 +80,7 @@ a {
 body {
 	// background-color: #11151c;
 	font-size: 16px;
-	font-family: "Karla", sans-serif;
+	font-family: 'Karla', sans-serif;
 }
 
 //
@@ -204,7 +204,7 @@ body {
 		animation-delay: 0.5s;
 
 		&::before {
-			content: "";
+			content: '';
 			display: inline-block;
 			position: absolute;
 			top: 0;
@@ -218,7 +218,7 @@ body {
 			animation-delay: 0s;
 		}
 		&::after {
-			content: "";
+			content: '';
 			display: inline-block;
 			position: absolute;
 			top: 0;
@@ -235,11 +235,11 @@ body {
 
 	p {
 		font-size: 20px;
-		font-family: "Inter", sans-serif;
+		font-family: 'Inter', sans-serif;
 		padding: 10px 5px;
 		margin: 5px 0px;
 		&:after {
-			content: " . . .";
+			content: ' . . .';
 			animation: dotsanim 1500ms steps(5, end) infinite;
 		}
 	}
@@ -751,7 +751,7 @@ body {
 	height: 100vh;
 	padding-bottom: 25px;
 	background-color: $chromeYellow;
-	background: url("../assets/svg/telebyteBackground.svg"),
+	background: url('../assets/svg/telebyteBackground.svg'),
 		linear-gradient(180deg, #20262b, #1c2228, #191f25);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -767,12 +767,8 @@ body {
 		width: 600px;
 		height: 200px;
 		overflow: hidden;
-		background-image: url("../assets/img/background.png"),
-			linear-gradient(
-				180deg,
-				hsla(0, 0%, 100%, 0) 50%,
-				rgb(250, 232, 255)
-			),
+		background-image: url('../assets/img/background.png'),
+			linear-gradient(180deg, hsla(0, 0%, 100%, 0) 50%, rgb(250, 232, 255)),
 			linear-gradient(360deg, #d5e2ff 32%, #fdfff6);
 		background-position: center;
 		background-size: cover;
@@ -870,8 +866,7 @@ body {
 					width: 85%;
 					padding: 12px 15px;
 					margin: 10px;
-					box-shadow: inset 2px 6px 8px rgba(0, 0, 0, 0.1),
-						0 0 0 transparent;
+					box-shadow: inset 2px 6px 8px rgba(0, 0, 0, 0.1), 0 0 0 transparent;
 					border-radius: 3px;
 
 					&:hover,
@@ -1172,7 +1167,7 @@ body {
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
 
-	background: url("../assets/svg/telebyteBackground.svg");
+	background: url('../assets/svg/telebyteBackground.svg');
 	background-size: contain;
 	background-attachment: fixed;
 	background-position: center;
@@ -1245,7 +1240,7 @@ body {
 				h2 {
 					margin-left: 10px;
 					padding: 5px;
-					font-family: "Karla", sans-serif;
+					font-family: 'Karla', sans-serif;
 					font-size: 24px;
 				}
 
@@ -1254,7 +1249,7 @@ body {
 					padding: 2px;
 					padding-left: 5px;
 					font-size: 17px;
-					font-family: "Karla", sans-serif;
+					font-family: 'Karla', sans-serif;
 				}
 
 				.ProfileCardLeftLocation,
@@ -1388,8 +1383,7 @@ body {
 					padding: 5px 5px 5px 10px;
 					margin: 5px 0px;
 					border-radius: 5px;
-					box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
-						0px 8px 16px rgba(0, 0, 0, 0.2),
+					box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0px 8px 16px rgba(0, 0, 0, 0.2),
 						0px 8px 16px 0 rgba(0, 0, 0, 0.2);
 
 					h4 {
@@ -1627,7 +1621,7 @@ body {
 //
 
 .MainStandardProfileStart {
-	font-family: "Inter", sans-serif;
+	font-family: 'Inter', sans-serif;
 	width: 100%;
 	min-height: 100vh;
 	background-color: #f0f0f0;
@@ -1981,8 +1975,7 @@ body {
 							margin: 5px 0;
 							border-radius: 5px;
 							border: 1px solid #cfcfcf;
-							box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1),
-								0px 0px 1px rgba(0, 0, 0, 0.1),
+							box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px rgba(0, 0, 0, 0.1),
 								0px 0px 1px 0 rgba(0, 0, 0, 0.1);
 
 							h5 {
@@ -2532,10 +2525,10 @@ body {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	font-family: "Inter", sans-serif;
+	font-family: 'Inter', sans-serif;
 
 	.SettingArea {
-		font-family: "Inter", sans-serif;
+		font-family: 'Inter', sans-serif;
 		width: 1000px;
 		margin-top: 30px;
 		margin-bottom: 30px;
@@ -2596,10 +2589,10 @@ body {
 
 		.SettingMainWorkingArea {
 			width: 70%;
-			font-family: "Inter", sans-serif;
+			font-family: 'Inter', sans-serif;
 
 			.SettingCard {
-				font-family: "Inter", sans-serif;
+				font-family: 'Inter', sans-serif;
 				width: 100%;
 				margin: 25px 0;
 				border-radius: 5px;
@@ -2685,7 +2678,7 @@ body {
 
 						font-size: 14px;
 
-						&[disabled="true"]:hover {
+						&[disabled='true']:hover {
 							border: 1px solid red;
 						}
 
@@ -2710,7 +2703,7 @@ body {
 					}
 
 					.AboutMarkdown {
-						font-family: "Inter", sans-serif;
+						font-family: 'Inter', sans-serif;
 						max-width: 100%;
 						max-height: 500px;
 						width: 100%;
@@ -2720,7 +2713,7 @@ body {
 						border: 1px solid #cfcfcf;
 					}
 
-					input[name="color"] {
+					input[name='color'] {
 						cursor: pointer;
 						padding: 0;
 						border: 2px solid transparent;
@@ -2735,13 +2728,13 @@ body {
 						}
 					}
 
-					input[type="color"]::-webkit-color-swatch {
+					input[type='color']::-webkit-color-swatch {
 						border: none;
 						border-radius: 50%;
 						padding: 0;
 					}
 
-					input[type="color"]::-webkit-color-swatch-wrapper {
+					input[type='color']::-webkit-color-swatch-wrapper {
 						border: none;
 						border-radius: 50%;
 						padding: 0;
@@ -2796,8 +2789,7 @@ body {
 						padding: 5px 5px 5px 10px;
 						margin: 5px 0px;
 						border-radius: 5px;
-						box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1),
-							0px 0px 1px rgba(0, 0, 0, 0.1),
+						box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px rgba(0, 0, 0, 0.1),
 							0px 0px 1px 0 rgba(0, 0, 0, 0.1);
 
 						display: flex;
@@ -2976,7 +2968,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-family: "Inter", sans-serif;
+	font-family: 'Inter', sans-serif;
 
 	.MainAboutSection {
 		margin-top: 30px;
@@ -3039,6 +3031,145 @@ body {
 				border-radius: 6px 6px 0 0;
 				padding: 6px 8px;
 				border-bottom: 1px solid #cfcfcf;
+			}
+		}
+	}
+}
+
+.mainPrivacy {
+	// display: flex;
+	// align-items: center;
+	// justify-content: center;
+	// flex-direction: column;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.625;
+
+	.privacyStarting {
+		padding: 10px 20px 40px;
+		max-width: 1300px;
+		margin-left: auto;
+		margin-right: auto;
+		line-height: 1.7;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		padding: 10px 20px 40px;
+
+		.privacyHeader {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			border-bottom: 1px solid #dfdfdf;
+			padding: 20px;
+		}
+
+		h1 {
+			margin-top: 25px;
+			margin-bottom: 15px;
+			line-height: 1.4;
+			font-weight: 400;
+		}
+
+		p {
+			font-size: 1.14rem;
+			margin-bottom: 10px;
+			color: #5a5a5a;
+		}
+
+		h2 {
+			// font-size: 1.375rem;
+			font-size: 1.65rem;
+			font-weight: 400;
+			margin-top: 20px;
+			margin-bottom: 10px;
+			margin-block-start: 0.83em;
+			margin-block-end: 0.83em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+		}
+
+		h3 {
+			// font-size: 1.375rem;
+			font-size: 1.3rem;
+			font-weight: 400;
+			margin-top: 20px;
+			margin-bottom: 10px;
+			margin-block-start: 0.83em;
+			margin-block-end: 0.83em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+		}
+
+		ul {
+			font-size: 1rem;
+			line-height: 2;
+			margin-left: 30px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+			display: block;
+			list-style-type: disc;
+			list-style: disc;
+			margin-block-start: 1em;
+			margin-block-end: 1em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			padding-inline-start: 40px;
+
+			li {
+				list-style-type: disc;
+				list-style: disc;
+
+				p {
+					strong {
+						color: #3a3a3a;
+					}
+				}
+			}
+		}
+
+		a {
+			color: #40a9ff;
+
+			&:visited,
+			&:active,
+			&:hover {
+				color: #40a9ff;
+			}
+
+			&:hover {
+				color: #40a9ff;
+			}
+		}
+
+		.lastPara {
+			width: 100%;
+			text-align: end;
+			font-size: 15px;
+		}
+
+		.footer {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			border-top: 1px solid #dfdfdf;
+			padding: 0;
+			margin: 0;
+
+			ul {
+				padding: 0;
+				margin-top: 3;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+
+				li {
+					padding: 0px 8px;
+					margin: 0px 10px;
+					list-style: none;
+					list-style-type: none;
+					color: #505050;
+				}
 			}
 		}
 	}
