@@ -351,6 +351,25 @@ const TermsAndCondition = () => {
 					provided free of charge, we will not be liable for any loss or damage of any
 					nature.
 				</p>
+
+				<p className={styles.lastPara}>Last updated: January 03, 2021</p>
+
+				<div className={styles.footer}>
+					<ul>
+						<li>Copyright © 2021 Socbyte</li>
+						<li>Help Center</li>
+						{/* <li>Jobs</li> */}
+
+						<li>
+							<a href='/terms'>Terms</a>
+						</li>
+						<li>
+							<a href='/privacy'>Privacy Policy</a>
+						</li>
+					</ul>
+
+					<span>India</span>
+				</div>
 			</div>
 		</div>
 	);

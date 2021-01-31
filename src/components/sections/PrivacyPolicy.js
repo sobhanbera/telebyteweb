@@ -509,7 +509,7 @@ const PrivacyPolicy = () => {
 							<a href='/terms'>Terms</a>
 						</li>
 						<li>
-							<a href='#'>Privacy Policy</a>
+							<a href='/privacy'>Privacy Policy</a>
 						</li>
 					</ul>
 
